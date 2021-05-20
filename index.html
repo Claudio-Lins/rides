@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
     <style>
+      table tbody tr {
+        opacity: 0.7;
+      }
+      table tr:hover {
+        opacity: 1;
+      }
+      table tbody td {
+        background: #fff;
+        padding: 1rem 2rem;
+      }
+      /* MODAL ======================================================*/
       .modal-overlay {
         width: 100%;
         height: 100%;
@@ -42,18 +53,13 @@
       .input-group {
         margin-top: 0.8rem;
       }
-      .input-group .help {
-        opacity: 0.3;
-      }
+
       .input-group.actions {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .input-group.actions .button,
-      .input-group.actions button {
-        width: 48%;
-      }
+
       footer {
         text-align: center;
         font-weight: 100;
@@ -66,20 +72,19 @@
         html {
           font-size: 87.5%;
         }
-        
       }
     </style>
     <title>Ride$Finance</title>
   </head>
   <body class="bg-gray-200">
-    <header class="bg-green-400 flex justify-center items-center h-48">
+    <header class="bg-blue-600 flex justify-center items-center h-48">
       <img src="./assets/logo.svg" width="300px" alt="Logo Dev.Finance" />
     </header>
-    <main class="container px-6 pb-10 mx-auto">
+    <main class="container px-10 pb-10 mx-auto">
       <section id="balance" class="-mt-12 md:grid md:grid-cols-3 md:gap-4">
         <h2 class="sr-only">Balanço</h2>
 
-        <div class="bg-white px-6 py-8 mb-8 rounded-md text-blue-900">
+        <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
           <h3
             class="
               text-lg text-center
@@ -96,7 +101,7 @@
             € 0,00
           </p>
         </div>
-        <div class="bg-white px-6 py-8 mb-8 rounded-md text-blue-900">
+        <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
           <h3
             class="
               text-lg text-center
@@ -116,7 +121,7 @@
             € 0,00
           </p>
         </div>
-        <div class="bg-blue-600 px-6 py-8 mb-8 rounded-md">
+        <div class="bg-blue-600 px-6 py-6 mb-8 rounded-md">
           <h3
             class="
               text-lg text-center text-white
@@ -157,7 +162,7 @@
               <th class="rounded-r bg-white text-left font-bold py-3 px-6">
                 Data
               </th>
-              <th></th>
+              <th class="rounded-r bg-white text-left font-bold py-3 px-6"></th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -167,7 +172,7 @@
     <div class="modal-overlay">
       <div class="modal rounded-md">
         <div class="form">
-          <h2 class='font-bold text-lg'>Nova Transação</h2>
+          <h2 class="font-bold text-lg">Nova Transação</h2>
           <form action="" onsubmit="Form.submit(event)">
             <div class="input-group">
               <label class="sr-only" for="description">Descrição</label>
@@ -187,7 +192,7 @@
                 name="amount"
                 placeholder="0,00"
               />
-              <small class="help"
+              <small class="text-xs text-gray-500"
                 >Use o sinal - (negativo) para despesas e , (vírgula) para casas
                 decimais</small
               >
@@ -197,10 +202,34 @@
               <input type="date" id="date" name="date" />
             </div>
             <div class="input-group actions">
-              <a onClick="Modal.close()" href="#" class="px-6 py-2 bg-red-500 outline-none rounded-md text-white hover:bg-red-900 cancel"
+              <a
+                onClick="Modal.close()"
+                href="#"
+                class="
+                  px-6
+                  py-2
+                  bg-red-500
+                  outline-none
+                  rounded-md
+                  text-white
+                  hover:bg-red-900
+                  cancel
+                "
                 >Cancelar</a
               >
-              <button class="px-6 py-2 bg-green-500 outline-none rounded-md text-white hover:bg-green-900">Salvar</button>
+              <button
+                class="
+                  px-10
+                  py-2
+                  bg-green-500
+                  outline-none
+                  rounded-md
+                  text-white
+                  hover:bg-green-900
+                "
+              >
+                Salvar
+              </button>
             </div>
           </form>
         </div>
