@@ -1,0 +1,23 @@
+{
+  "name": "rides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claudio-Lins/rides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Claudio-Lins/rides/issues"
+  },
+  "homepage": "https://github.com/Claudio-Lins/rides#readme",
+  "dependencies": {
+    "tailwindcss": "^2.1.2"
+  }
+}
