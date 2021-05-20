@@ -66,11 +66,7 @@
         html {
           font-size: 87.5%;
         }
-        #balance {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
-        }
+        
       }
     </style>
     <title>Ride$Finance</title>
@@ -79,8 +75,8 @@
     <header class="bg-green-400 flex justify-center items-center h-48">
       <img src="./assets/logo.svg" width="300px" alt="Logo Dev.Finance" />
     </header>
-    <main class="container px-6 pb-10">
-      <section id="balance" class="-mt-12">
+    <main class="container px-6 pb-10 mx-auto">
+      <section id="balance" class="-mt-12 md:grid md:grid-cols-3 md:gap-4">
         <h2 class="sr-only">Balanço</h2>
 
         <div class="bg-white px-6 py-8 mb-8 rounded-md text-blue-900">
@@ -169,9 +165,9 @@
       </section>
     </main>
     <div class="modal-overlay">
-      <div class="modal">
+      <div class="modal rounded-md">
         <div class="form">
-          <h2>Nova Transação</h2>
+          <h2 class='font-bold text-lg'>Nova Transação</h2>
           <form action="" onsubmit="Form.submit(event)">
             <div class="input-group">
               <label class="sr-only" for="description">Descrição</label>
@@ -201,10 +197,10 @@
               <input type="date" id="date" name="date" />
             </div>
             <div class="input-group actions">
-              <a onClick="Modal.close()" href="#" class="button cancel"
+              <a onClick="Modal.close()" href="#" class="px-6 py-2 bg-red-500 outline-none rounded-md text-white hover:bg-red-900 cancel"
                 >Cancelar</a
               >
-              <button>Salvar</button>
+              <button class="px-6 py-2 bg-green-500 outline-none rounded-md text-white hover:bg-green-900">Salvar</button>
             </div>
           </form>
         </div>
