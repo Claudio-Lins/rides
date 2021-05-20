@@ -43,10 +43,11 @@
       td.description {
         color: var(--dark-blue);
       }
-      td.income {
+      .income {
         color: #12a454;
+        width: 25%;
       }
-      td.expense {
+      .expense {
         color: #e92929;
       }
       /* MODAL ======================================================*/
@@ -113,7 +114,7 @@
     <header class="bg-black flex justify-center items-center h-48">
       <img src="./assets/logo.svg" width="300px" alt="Logo Dev.Finance" />
     </header>
-    <main class="container px-10 pb-10 mx-auto">
+    <main class="container px-3 pb-10 mx-auto">
       <section id="balance" class="-mt-12 md:grid md:grid-cols-3 md:gap-4">
         <h2 class="sr-only">Balanço</h2>
 
@@ -186,17 +187,30 @@
           >
         </div>
         <table id="data-table">
-          <thead>
+          <!-- <thead>
             <tr>
               <th>Descrição</th>
               <th>Valor</th>
               <th>Data</th>
               <th></th>
             </tr>
-          </thead>
+          </thead> -->
           <tbody>
           </tbody>
         </table>
+        <div class="bg-white flex items-center px-3 py-5 rounded-md text-left text-gray-500 mb-2 text-sm font-semibold">
+            <div class="w-1/4">Descrição</div>
+            <div class="w-1/4">Valor</div>
+            <div class="w-1/4">Data</div>
+            <div class="w-1/4"></div>
+        </div>
+        <div id="entradas" class="bg-gray-100 items-center px-3 py-2  text-left text-gray-500 text-sm rounded-md mb-2"></div>
+        <!-- <div id="entradas" class="bg-gray-100 flex items-center px-8 py-3  text-left text-gray-500 text-sm rounded-md mb-2">
+            <div class="w-1/4">Uber</div>
+            <div class="w-1/4">€ 120,00</div>
+            <div class="w-1/4">20/05/2021</div>
+            <div class="w-1/4 flex justify-end"><img src="./assets/minus.svg" alt="Imagem remover transaçnao"/></div>
+        </div> -->
       </section>
     </main>
     <div class="modal-overlay">
