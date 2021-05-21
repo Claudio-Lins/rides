@@ -232,6 +232,7 @@ const Form = {
       // modal feche
       Modal.close();
       // atualizar a aplicação // Já temos um App.reload() no add
+      
     } catch (error) {
       alert(error.message);
     }

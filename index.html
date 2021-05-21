@@ -186,18 +186,18 @@
             >+ Nova transação</a
           >
         </div>
-        <table id="data-table">
-          <!-- <thead>
+        <!-- <table id="data-table">
+          <thead>
             <tr>
               <th>Descrição</th>
               <th>Valor</th>
               <th>Data</th>
               <th></th>
             </tr>
-          </thead> -->
+          </thead>
           <tbody>
           </tbody>
-        </table>
+        </table> -->
         <div class="bg-white flex items-center px-4 py-5 rounded-md text-left text-gray-500 mb-2 text-sm font-semibold">
             <div class="w-1/4">Descrição</div>
             <div class="w-1/4">Valor</div>
@@ -226,6 +226,12 @@
                 name="description"
                 placeholder="Descrição"
               />
+            </div>
+            <div class='flex justify-between text-center text-sm py-2 space-x-1 text-white'>
+                <div class="w-1/4 px-3 py-2 bg-black rounded-md shadow-md outline-none"><button id="uber" name='uber'>Uber</button></div>
+                <div class="w-1/4 px-3 py-2 bg-green-700 rounded-md shadow-md outline-none"><button id='bolt'>Bolt</button></div>
+                <div class="w-1/4 px-1 py-2 bg-blue-700 rounded-md shadow-md outline-none"><button id='freenow'>FreeNow</button></div>
+                <div class="w-1/4 px-3 py-2 bg-red-700 rounded-md shadow-md outline-none"><button id='cash'>Cash</button></div>
             </div>
             <div class="input-group">
               <label class="sr-only" for="amount">Valor</label>
