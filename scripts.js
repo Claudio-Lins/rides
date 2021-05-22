@@ -146,9 +146,8 @@ const DOM = {
 
 const Utils = {
   formateAmount(value) {
-    value = Number(value) * 100;
-
-    return value;
+    value = value * 100;
+    return Math.round(value);
   },
 
   formateDate(date) {
@@ -239,7 +238,6 @@ const Form = {
   },
 };
 
-//
 
 const App = {
   init() {
