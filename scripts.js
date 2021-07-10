@@ -169,7 +169,7 @@ const Utils = {
 };
 
 const Form = {
-  description: document.querySelector("input#description"),
+  description: document.querySelector("select#description"),
   amount: document.querySelector("input#amount"),
   date: document.querySelector("input#date"),
 

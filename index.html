@@ -218,7 +218,7 @@
         <div class="form">
           <h2 class="font-bold text-lg">Nova Transação</h2>
           <form action="" onsubmit="Form.submit(event)">
-            <div class="input-group">
+            <!-- <div class="input-group">
               <label class="sr-only" for="description">Descrição</label>
               <input
                 type="text"
@@ -226,12 +226,22 @@
                 name="description"
                 placeholder="Descrição"
               />
-            </div>
-            <div class='flex justify-between text-center text-sm py-2 space-x-1 text-white'>
+            </div> -->
+            <!-- <div class='flex justify-between text-center text-sm py-2 space-x-1 text-white'>
                 <div class="w-1/4 px-3 py-2 bg-black rounded-md shadow-md outline-none"><button id="uber" name='uber'>Uber</button></div>
                 <div class="w-1/4 px-3 py-2 bg-green-700 rounded-md shadow-md outline-none"><button id='bolt'>Bolt</button></div>
                 <div class="w-1/4 px-1 py-2 bg-blue-700 rounded-md shadow-md outline-none"><button id='freenow'>FreeNow</button></div>
                 <div class="w-1/4 px-3 py-2 bg-red-700 rounded-md shadow-md outline-none"><button id='cash'>Cash</button></div>
+            </div> -->
+            <div>
+              <select id="description" name="description" class="w-full h-12">
+                <option value="">Descrição</option>
+                <option value="Uber">Uber</option>
+                <option value="Bolt">Bolt</option>
+                <option value="FreeNow">FreeNow</option>
+                <option value="Cash">Cash</option>
+                <option value="Gas">Gás</option>
+              </select>
             </div>
             <div class="input-group">
               <label class="sr-only" for="amount">Valor</label>
