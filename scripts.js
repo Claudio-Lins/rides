@@ -2,6 +2,9 @@ const Modal = {
   open() {
     // Abrir Modal
     // Adicionar a class active ao Modal
+    document.querySelector('input[type="date"]').value = new Date()
+      .toISOString()
+      .substr(0, 10);
     document.querySelector(".modal-overlay").classList.add("active");
   },
   close() {
@@ -67,7 +70,7 @@ const Transaction = {
     //para cada transação,
     Transaction.all.forEach((transaction) => {
       // se ela for maior que ZERO
-      if (transaction.amount > 0) {
+      if (transaction.amount > 0 && transaction.description != "Gas") {
         //somar a uma variável e retornar a variável
         income += transaction.amount;
       }
@@ -78,15 +81,18 @@ const Transaction = {
   expenses() {
     let expense = 0;
     Transaction.all.forEach((transaction) => {
-      if (transaction.amount < 0) {
+      if (transaction.description == "Gas") {
         expense += transaction.amount;
       }
+      // if (transaction.amount < 0) {
+      //   expense += transaction.amount;
+      // }
     });
     return expense;
   },
 
   total() {
-    return Transaction.incomes() + Transaction.expenses();
+    return Transaction.incomes() - Transaction.expenses();
   },
 };
 
@@ -102,7 +108,8 @@ const DOM = {
   },
 
   innerHTMLTransaction(transaction, index) {
-    const CSSclass = transaction.amount > 0 ? "income" : "expense";
+    // const CSSclass = transaction.amount > 0 ? "income" : "expense";
+    const CSSclass = transaction.description == "Gas" ? "expense" : "income";
     const amount = Utils.formatCurrency(transaction.amount);
     const html = `
     <div style="display:flex; padding-top:0.5rem; padding-bottom:0.5rem; margin-bottom: 8px;">
@@ -113,7 +120,7 @@ const DOM = {
       </div>
   
       `;
-      //class="bg-white flex items-center px-8 py-5 rounded-md text-left text-gray-500  tracking-wide mb-2">
+    //class="bg-white flex items-center px-8 py-5 rounded-md text-left text-gray-500  tracking-wide mb-2">
     // const html = `
     //           <td class="descriptio">${transaction.description}</td>
     //           <td class="${CSSclass}">${amount}</td>
@@ -154,7 +161,7 @@ const Utils = {
     const splittedDate = date.split("-");
     return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
   },
-  
+
   formatCurrency(value) {
     const signal = Number(value) < 0 ? "-" : "";
     value = String(value).replace(/\D/g, "");
@@ -163,7 +170,7 @@ const Utils = {
       style: "currency",
       currency: "EUR",
     });
-    
+
     return signal + value;
   },
 };
@@ -231,13 +238,11 @@ const Form = {
       // modal feche
       Modal.close();
       // atualizar a aplicação // Já temos um App.reload() no add
-      
     } catch (error) {
       alert(error.message);
     }
   },
 };
-
 
 const App = {
   init() {
