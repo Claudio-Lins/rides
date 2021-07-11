@@ -182,8 +182,8 @@
           <a
             href="#"
             onClick="Modal.open()"
-            class="bg-green-700 px-4 py-4 mb-4 rounded-lg text-white shadow-md new"
-            >+ Nova transação</a
+            class="bg-green-700 w-full px-4 py-4 mb-4 rounded-lg text-white text-center text-xl font-bold tracking-wide shadow-md new"
+            >Nova Transação</a
           >
         </div>
         <!-- <table id="data-table">
@@ -234,9 +234,9 @@
                 <div class="w-1/4 px-3 py-2 bg-red-700 rounded-md shadow-md outline-none"><button id='cash'>Cash</button></div>
             </div> -->
             <div>
-              <select id="description" name="description" class="w-full h-12 bg-green-400 text-base">
+              <select id="description" name="description" class="w-full h-12 bg-green-400 text-base rounded-sm">
                 <option value="">Descrição</option>
-                <option value="Uber">Uber</option>
+                <option value="Uber" selected>Uber</option>
                 <option value="Bolt">Bolt</option>
                 <option value="FreeNow">FreeNow</option>
                 <option value="Cash">Cash</option>
@@ -247,15 +247,15 @@
               <label class="sr-only" for="amount">Valores</label>
               <input
                 type="number"
-                step="1"
+                step="0.01"
                 id="amount"
                 name="amount"
                 placeholder="0,00"
               />
-              <small class="text-xs text-gray-500"
+              <!-- <small class="text-xs text-gray-500"
                 >Use o sinal - (negativo) para despesas e , (vírgula) para casas
-                decimais</small
-              >
+                decimais</small 
+              >-->
             </div>
             <div class="input-group">
               <label class="sr-only" for="date">Data</label>
