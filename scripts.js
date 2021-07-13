@@ -66,13 +66,21 @@ const Transaction = {
 
   incomes() {
     let income = 0;
+    const comissao = "0.80";
+
     //pegar todas as Transações
     //para cada transação,
     Transaction.all.forEach((transaction) => {
-      // se ela for maior que ZERO
-      if (transaction.amount > 0 && transaction.description != "Gas") {
-        //somar a uma variável e retornar a variável
+      // se ela for maior que ZERO e diferente de Gas, Bolt e FreeNow
+      if (
+        transaction.amount > 0 &&
+        transaction.description != "Gas" &&
+        transaction.description != "Bolt" &&
+        transaction.description != "FreeNow"
+      ) {
         income += transaction.amount;
+      } else {
+        income += transaction.amount * comissao;
       }
     });
     return income;
@@ -116,7 +124,7 @@ const DOM = {
       <div style="width:25%;">${transaction.description}</div>
       <div style="width:25%;" class="${CSSclass}">${amount}</div>
       <div style="width:25%;">${transaction.date}</div>
-      <div style="width:25%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Imagem remover transaçnao" /></div>
+      <div style="width:25%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Imagem remover transação" /></div>
       </div>
   
       `;
