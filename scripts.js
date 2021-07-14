@@ -71,7 +71,7 @@ const Transaction = {
     //pegar todas as Transações
     //para cada transação,
     Transaction.all.forEach((transaction) => {
-      // se ela for maior que ZERO e diferente de Gas, Bolt e FreeNow
+      // se ela for maior que ZERO e diferente de Combustível, Bolt e FreeNow
       switch (transaction.description) {
         case "Bolt":
           income += transaction.amount * comissao;
@@ -85,13 +85,13 @@ const Transaction = {
         case "Cash":
           income += transaction.amount;
           break;
-      
+
         default:
           break;
       }
       // if (
       //   transaction.amount > 0 &&
-      //   transaction.description != "Gas" &&
+      //   transaction.description != "Combustível" &&
       //   transaction.description != "Bolt" &&
       //   transaction.description != "FreeNow"
       // ) {
@@ -106,7 +106,7 @@ const Transaction = {
   expenses() {
     let expense = 0;
     Transaction.all.forEach((transaction) => {
-      if (transaction.description == "Gas") {
+      if (transaction.description == "Combustível") {
         expense += transaction.amount;
       }
       // if (transaction.amount < 0) {
@@ -134,24 +134,24 @@ const DOM = {
 
   innerHTMLTransaction(transaction, index) {
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
-    const CSSclass = transaction.description == "Gas" ? "expense" : "income";
-    
+    const CSSclass =
+      transaction.description == "Combustível" ? "expense" : "income";
+
     if (
       transaction.description == "Bolt" ||
       transaction.description == "FreeNow"
-      ) {
-      amount = Utils.formatCurrency(transaction.amount * 0.80);
+    ) {
+      amount = Utils.formatCurrency(transaction.amount * 0.8);
     } else {
       amount = Utils.formatCurrency(transaction.amount);
     }
-      
 
     const html = `
-    <div style="display:flex; padding-top:0.5rem; padding-bottom:0.5rem; margin-bottom: 8px;">
-      <div style="width:25%;">${transaction.description}</div>
+    <div class="flex items-center bg-gray-100 px-4 py-3 text-gray-500 text-sm rounded-md mb-0.5">
+      <div style="width:35%;">${transaction.description}</div>
       <div style="width:25%;" class="${CSSclass}">${amount}</div>
       <div style="width:25%;">${transaction.date}</div>
-      <div style="width:25%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Imagem remover transação" /></div>
+      <div style="width:15%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" width=20px alt="Imagem remover transação" /></div>
       </div>
   
       `;

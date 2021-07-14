@@ -1,17 +1,18 @@
 module.exports = {
-  purge: [],
+  mode: "jit",
+  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
   variants: {
     extend: {
-      backgroundColor: ['active'],
+      backgroundColor: ["active"],
       // ...
-      borderColor: ['focus-visible', 'first'],
+      borderColor: ["focus-visible", "first"],
       // ...
-      textColor: ['visited'],
-    }
+      textColor: ["visited"],
+    },
   },
   plugins: [],
-}
+};
