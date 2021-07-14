@@ -72,16 +72,33 @@ const Transaction = {
     //para cada transação,
     Transaction.all.forEach((transaction) => {
       // se ela for maior que ZERO e diferente de Gas, Bolt e FreeNow
-      if (
-        transaction.amount > 0 &&
-        transaction.description != "Gas" &&
-        transaction.description != "Bolt" &&
-        transaction.description != "FreeNow"
-      ) {
-        income += transaction.amount;
-      } else {
-        income += transaction.amount * comissao;
+      switch (transaction.description) {
+        case "Bolt":
+          income += transaction.amount * comissao;
+          break;
+        case "FreeNow":
+          income += transaction.amount * comissao;
+          break;
+        case "Uber":
+          income += transaction.amount;
+          break;
+        case "Cash":
+          income += transaction.amount;
+          break;
+      
+        default:
+          break;
       }
+      // if (
+      //   transaction.amount > 0 &&
+      //   transaction.description != "Gas" &&
+      //   transaction.description != "Bolt" &&
+      //   transaction.description != "FreeNow"
+      // ) {
+      //   income += transaction.amount;
+      // } else {
+      //   income += transaction.amount * comissao;
+      // }
     });
     return income;
   },
@@ -118,7 +135,17 @@ const DOM = {
   innerHTMLTransaction(transaction, index) {
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass = transaction.description == "Gas" ? "expense" : "income";
-    const amount = Utils.formatCurrency(transaction.amount);
+    
+    if (
+      transaction.description == "Bolt" ||
+      transaction.description == "FreeNow"
+      ) {
+      amount = Utils.formatCurrency(transaction.amount * 0.80);
+    } else {
+      amount = Utils.formatCurrency(transaction.amount);
+    }
+      
+
     const html = `
     <div style="display:flex; padding-top:0.5rem; padding-bottom:0.5rem; margin-bottom: 8px;">
       <div style="width:25%;">${transaction.description}</div>
