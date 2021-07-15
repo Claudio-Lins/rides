@@ -133,6 +133,7 @@ const DOM = {
   },
 
   innerHTMLTransaction(transaction, index) {
+    const comissao = '0.80'
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass =
       transaction.description == "Combustível" ? "expense" : "income";
@@ -141,7 +142,7 @@ const DOM = {
       transaction.description == "Bolt" ||
       transaction.description == "FreeNow"
     ) {
-      amount = Utils.formatCurrency(transaction.amount * 0.8);
+      amount = Utils.formatCurrency(transaction.amount * comissao);
     } else {
       amount = Utils.formatCurrency(transaction.amount);
     }
