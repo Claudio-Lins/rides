@@ -118,16 +118,22 @@
       <section id="balance" class="-mt-12 md:grid md:grid-cols-3 md:gap-4">
         <h2 class="sr-only">Balanço</h2>
 
+        <div class="flex justify-between space-x-4 px-4 mb-4">
+          <div class="bg-white w-1/3 p-2 rounded-md">
+            <div class="flex justify-between relative">
+              <div class="text-xs">Today</div>
+              <div id="today" class="text-xs bg-red-500 absolute">17/Jul</div>
+            </div>
+            <p class="text-xl leading-relaxed mt-4 font-bold" id="incomeDisplayToday">
+              € 0,00
+            </p>
+          </div>
+          <div class="bg-white w-1/3 p-2 rounded-md">Week</div>
+          <div class="bg-white w-1/3 p-2 rounded-md">Month</div>
+        </div>
+
         <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
-          <h3
-            class="
-              text-lg text-center
-              font-normal
-              flex
-              items-center
-              justify-between
-            "
-          >
+          <h3 class="text-lg text-center font-normal flex items-center justify-between">
             <span>Entradas</span>
             <img src="./assets/income.svg" alt="Imagem de entradas" />
           </h3>
@@ -135,46 +141,29 @@
             € 0,00
           </p>
         </div>
+
         <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
-          <h3
-            class="
-              text-lg text-center
-              font-normal
-              flex
-              items-center
-              justify-between
-            "
-          >
+          <h3 class=" text-lg text-center font-normal flex items-center justify-between">
             <span>Saídas</span>
             <img src="./assets/expense.svg" alt="Imagem de saídas" />
           </h3>
-          <p
-            class="text-3xl leading-relaxed mt-4 font-bold text-red-700"
-            id="expenseDisplay"
-          >
+          <p class="text-3xl leading-relaxed mt-4 font-bold text-red-700"
+            id="expenseDisplay">
             € 0,00
           </p>
         </div>
+
         <div class="bg-blue-600 px-6 py-6 mb-8 rounded-md">
-          <h3
-            class="
-              text-lg text-center text-white
-              font-normal
-              flex
-              items-center
-              justify-between
-            "
-          >
+          <h3 class=" text-lg text-center text-white font-normal flex items-center justify-between">
             <span>Total</span>
             <img src="./assets/total.svg" alt="Imagem de total" />
           </h3>
-          <p
-            class="text-3xl text-white leading-relaxed mt-4 font-bold"
-            id="totalDisplay"
-          >
+          <p class="text-3xl text-white leading-relaxed mt-4 font-bold"
+            id="totalDisplay">
             € 0,00
           </p>
         </div>
+
       </section>
       <section id="translation" class="block w-full overflow-x-auto">
         <h2 class="sr-only">Transações</h2>
