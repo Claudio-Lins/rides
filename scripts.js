@@ -66,7 +66,7 @@ const Transaction = {
 
   incomes() {
     let income = 0;
-    const comissao = "0.80";
+    const comissao = '0.80';
 
     //pegar todas as Transações
     //para cada transação,
@@ -133,7 +133,7 @@ const DOM = {
   },
 
   innerHTMLTransaction(transaction, index) {
-    const comissao = '0.80'
+    const comissao = '0.80';
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass =
       transaction.description == "Combustível" ? "expense" : "income";
@@ -189,7 +189,9 @@ const DOM = {
 
 const Utils = {
   formateAmount(value) {
-    value = value * 100;
+    // value = value * 100;
+    // value = Number(value.replace(/\,\./g, "")) * 100
+    value = value * 100
     return Math.round(value);
   },
 
@@ -200,7 +202,7 @@ const Utils = {
 
   formatCurrency(value) {
     // const signal = Number(value) < 0 ? "-" : "";
-    value = String(value).replace(/\D+/g, "");
+    // value = String(value).replace(/\D/g, "")
     value = Number(value) / 100;
     value = value.toLocaleString("PT", {
       style: "currency",

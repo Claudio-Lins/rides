@@ -17,10 +17,10 @@
     "url": "https://github.com/Claudio-Lins/rides/issues"
   },
   "homepage": "https://github.com/Claudio-Lins/rides#readme",
-  "dependencies": {
-    "tailwindcss": "^2.1.2"
-  },
   "devDependencies": {
-    "@tailwindcss/jit": "^0.1.18"
+    "@tailwindcss/jit": "^0.1.10",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }
