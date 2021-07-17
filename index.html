@@ -112,13 +112,43 @@
     <title>Ride$Finance</title>
   </head>
   <body class="bg-gray-200 mx-auto">
-    <header class="bg-black flex flex-col justify-center items-center h-[250px]">
+    <header
+      class="bg-black flex flex-col justify-center items-center h-[250px]"
+    >
       <img src="./assets/logo.svg" width="300px" alt="Logo Dev.Finance" />
       <div class="mt-6">
-        <div class="text-white text-center items-center flex my-4 h-10 p-2 font-semibold">
-          <p id='diaSemana' class="text-blue-600 w-[50px] bg-white py-2 px-2 rounded-l-2xl">DOM</p>
-          <p id='diaNum' class="bg-green-600 py-2 px-2 text-2xl rounded-md shadow-md">Dia</p>
-          <p id='mes' class="text-blue-600 w-[50px] bg-white py-2 px-2 rounded-r-2xl">mes</p>
+        <div
+          class="
+            text-white text-center
+            items-center
+            flex
+            my-4
+            h-10
+            p-2
+            font-semibold
+          "
+        >
+          <div class="flex justify-center space-x-2 text-blue-600 w-[110px] bg-white py-2 px-2 rounded-l-2xl">
+            <span
+              id="diaSemana"
+              class=""
+              >DOM</span>
+            <span>-</span>
+            <span
+              id="diaNum"
+              class=""
+              >Dia</span>
+          </div>
+
+          <div id="minutos" class="bg-green-600 py-2 px-2 text-2xl rounded-md shadow-md">
+            <span id="hora" class="">00</span>
+            <span id="" class="animate-pulse">:</span>
+            <span id="minuto" class="">00</span>
+          </div>
+
+          <p id="mes" class="text-blue-600 w-[110px] bg-white py-2 px-2 rounded-r-2xl">
+            mes
+          </p>
         </div>
       </div>
     </header>
@@ -218,8 +248,7 @@
           <tbody>
           </tbody>
         </table> -->
-        <div class="headerDesc"
-        >
+        <div class="headerDesc">
           <div class="w-[33%]">Descrição</div>
           <div class="w-[27%]">Valor</div>
           <div class="w-[33%]">Data</div>
