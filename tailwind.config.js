@@ -1,18 +1,12 @@
 module.exports = {
   mode: "jit",
-  purge: ['./public/**/*.html',],
+  purge: ['./index.html',],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
   variants: {
-    extend: {
-      backgroundColor: ["active"],
-      // ...
-      borderColor: ["focus-visible", "first"],
-      // ...
-      textColor: ["visited"],
-    },
+    extend: {},
   },
   plugins: [],
 };
