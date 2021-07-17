@@ -11,6 +11,8 @@ function minutos() {
     let minuto = m.getMinutes();
     if (minuto <= 9) {
         document.querySelector("#minuto").innerHTML = '0' + minuto;
+      } else {
+        document.querySelector("#minuto").innerHTML = minuto;
       }
     
 }
