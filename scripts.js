@@ -1,3 +1,5 @@
+
+
 const Modal = {
   open() {
     // Abrir Modal
@@ -149,8 +151,8 @@ const DOM = {
 
     const html = `
     <div class="flex items-center bg-gray-100 px-4 py-3 text-gray-500 text-sm rounded-md mb-0.5">
-      <div style="width:35%;">${transaction.description}</div>
-      <div style="width:25%;" class="${CSSclass}">${amount}</div>
+      <div style="width:33%;">${transaction.description}</div>
+      <div style="width:27%;" class="${CSSclass}">${amount}</div>
       <div style="width:25%;">${transaction.date}</div>
       <div style="width:15%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" width=20px alt="Imagem remover transação" /></div>
       </div>
