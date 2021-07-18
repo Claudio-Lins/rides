@@ -1,4 +1,5 @@
 let fullDate = new Date();
+let ano = fullDate.getFullYear();
 let mes = fullDate.getMonth();
 let dia = fullDate.getDate();
 // let diadaSemana = fullDate.getDay();
@@ -31,7 +32,9 @@ function segundos() {
 // let diaTxt = document.querySelector("#diaNum");
 // diaTxt.innerHTML = dia;
 let mesTxt = document.querySelector("#mes");
-// mesTxt.innerHTML = mes;
+mesTxt.innerHTML = mes;
+let anoTxt = document.querySelector("#ano");
+anoTxt.innerHTML = ano;
 let horaNow = document.querySelector("#hora");
 horaNow.innerHTML = hora;
 // let minutoNow = document.querySelector("#minuto");
@@ -41,50 +44,50 @@ if (dia <= 9) {
   diaTxt.innerHTML = "0" + dia;
 }
 
-// switch (mes) {
-//   case 0:
-//     mesTxt.innerHTML = "JANEIRO";
-//     break;
-//   case 1:
-//     mesTxt.innerHTML = "FEVEREIRO";
-//     break;
-//   case 2:
-//     mesTxt.innerHTML = "MARÇO";
-//     break;
-//   case 3:
-//     mesTxt.innerHTML = "ABRIL";
-//     break;
-//   case 4:
-//     mesTxt.innerHTML = "MAIO";
-//     break;
-//   case 5:
-//     mesTxt.innerHTML = "JUNHO";
-//     break;
-//   case 6:
-//     mesTxt.innerHTML = "JULHO";
-//     break;
-//   case 7:
-//     mesTxt.innerHTML = "AGOSTO";
-//     break;
-//   case 8:
-//     mesTxt.innerHTML = "SETEMBRO";
-//     break;
+switch (mes) {
+  case 0:
+    mesTxt.innerHTML = "JANEIRO";
+    break;
+  case 1:
+    mesTxt.innerHTML = "FEVEREIRO";
+    break;
+  case 2:
+    mesTxt.innerHTML = "MARÇO";
+    break;
+  case 3:
+    mesTxt.innerHTML = "ABRIL";
+    break;
+  case 4:
+    mesTxt.innerHTML = "MAIO";
+    break;
+  case 5:
+    mesTxt.innerHTML = "JUNHO";
+    break;
+  case 6:
+    mesTxt.innerHTML = "JULHO";
+    break;
+  case 7:
+    mesTxt.innerHTML = "AGOSTO";
+    break;
+  case 8:
+    mesTxt.innerHTML = "SETEMBRO";
+    break;
 
-//   case 9:
-//     mesTxt.innerHTML = "OUTUBRO";
-//     break;
+  case 9:
+    mesTxt.innerHTML = "OUTUBRO";
+    break;
 
-//   case 10:
-//     mesTxt.innerHTML = "NOVEMBRO";
-//     break;
+  case 10:
+    mesTxt.innerHTML = "NOVEMBRO";
+    break;
 
-//   case 11:
-//     mesTxt.innerHTML = "DEZEMBRO";
-//     break;
+  case 11:
+    mesTxt.innerHTML = "DEZEMBRO";
+    break;
 
-//   default:
-//     break;
-// }
+  default:
+    break;
+}
 
 // switch (diadaSemana) {
 //   case 0:
