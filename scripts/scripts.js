@@ -1,5 +1,3 @@
-
-
 const Modal = {
   open() {
     // Abrir Modal
@@ -68,7 +66,7 @@ const Transaction = {
 
   incomes() {
     let income = 0;
-    const comissao = '0.80';
+    const comissao = "0.80";
 
     //pegar todas as Transações
     //para cada transação,
@@ -135,7 +133,7 @@ const DOM = {
   },
 
   innerHTMLTransaction(transaction, index) {
-    const comissao = '0.80';
+    const comissao = "0.80";
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass =
       transaction.description == "Combustível" ? "expense" : "income";
@@ -193,7 +191,7 @@ const Utils = {
   formateAmount(value) {
     // value = value * 100;
     // value = Number(value.replace(/\,\./g, "")) * 100
-    value = value * 100
+    value = value * 100;
     return Math.round(value);
   },
 
@@ -302,16 +300,14 @@ const App = {
 
 App.init();
 
+// myDate = new Date();
+// presentDay = myDate.getDate();
 
-console.log(Math.round(Transaction.incomes()) / 100);
-
-myDate = new Date();
-dataAtual = myDate.getDate();
-
-console.log(dataAtual);
-
-function presentIncomes() {
-  return 'ok'
-}
-
-console.log(presentIncomes());
+// setInterval(metas, 1000)
+// function metas() {
+// let presentDayIncome = Math.round(Transaction.incomes()) / 100;
+// if (presentDayIncome == 1) {
+//   document.querySelector("#incomeDisplay").classList.add('bg-black');
+// }
+// console.log(presentDayIncome);
+// }
