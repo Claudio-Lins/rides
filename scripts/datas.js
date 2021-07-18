@@ -1,7 +1,7 @@
 let fullDate = new Date();
 let mes = fullDate.getMonth();
 let dia = fullDate.getDate();
-let diadaSemana = fullDate.getDay();
+// let diadaSemana = fullDate.getDay();
 let hora = fullDate.getHours();
 // let minutos = fullDate.getSeconds();
 
@@ -26,10 +26,10 @@ function segundos() {
   }
 }
 
-let diaSemana = document.querySelector("#diaSemana");
-diaSemana.innerHTML = diadaSemana;
-let diaTxt = document.querySelector("#diaNum");
-diaTxt.innerHTML = dia;
+// let diaSemana = document.querySelector("#diaSemana");
+// diaSemana.innerHTML = diadaSemana;
+// let diaTxt = document.querySelector("#diaNum");
+// diaTxt.innerHTML = dia;
 let mesTxt = document.querySelector("#mes");
 mesTxt.innerHTML = mes;
 let horaNow = document.querySelector("#hora");
@@ -86,41 +86,30 @@ switch (mes) {
     break;
 }
 
-switch (diadaSemana) {
-  case 0:
-    diaSemana.innerHTML = "Dom";
-    break;
-  case 1:
-    diaSemana.innerHTML = "Seg";
-    break;
-  case 2:
-    diaSemana.innerHTML = "Ter";
-    break;
-  case 3:
-    diaSemana.innerHTML = "Qua";
-    break;
-  case 4:
-    diaSemana.innerHTML = "Qui";
-    break;
-  case 5:
-    diaSemana.innerHTML = "Sex";
-    break;
-  case 6:
-    diaSemana.innerHTML = "Sab";
-    break;
+// switch (diadaSemana) {
+//   case 0:
+//     diaSemana.innerHTML = "Dom";
+//     break;
+//   case 1:
+//     diaSemana.innerHTML = "Seg";
+//     break;
+//   case 2:
+//     diaSemana.innerHTML = "Ter";
+//     break;
+//   case 3:
+//     diaSemana.innerHTML = "Qua";
+//     break;
+//   case 4:
+//     diaSemana.innerHTML = "Qui";
+//     break;
+//   case 5:
+//     diaSemana.innerHTML = "Sex";
+//     break;
+//   case 6:
+//     diaSemana.innerHTML = "Sab";
+//     break;
 
-  default:
-    break;
-}
+//   default:
+//     break;
+// }
 
-//CurrentWeek
-Date.prototype.getWeek = function () {
-  var onejan = new Date(this.getFullYear(), 0, 1);
-  var today = new Date(this.getFullYear(), this.getMonth(), this.getDate());
-  var dayOfYear = (today - onejan + 86400000) / 86400000;
-  return Math.ceil(dayOfYear / 7);
-};
-
-var today = new Date();
-var currentWeekNumber = today.getWeek();
-console.log(currentWeekNumber);
