@@ -301,3 +301,17 @@ const App = {
 };
 
 App.init();
+
+
+console.log(Math.round(Transaction.incomes()) / 100);
+
+myDate = new Date();
+dataAtual = myDate.getDate();
+
+console.log(dataAtual);
+
+function presentIncomes() {
+  return 'ok'
+}
+
+console.log(presentIncomes());
