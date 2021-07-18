@@ -175,6 +175,7 @@ Date.prototype.getWeek = function () {
   diaCincoSemana.innerHTML = dayFiveOfWeek(dt).getDate();
   let nomeDiaSemanaCinco = document.querySelector("#nameOfWeekDayFive");
   let diaCincoDaSemana = dayOneOfWeek(dt).getDay() + 4;
+  
   switch (diaCincoDaSemana) {
     case 0:
       nomeDiaSemanaCinco.innerHTML = "Dom";
@@ -214,23 +215,25 @@ Date.prototype.getWeek = function () {
   diaSeisSemana.innerHTML = daySixOfWeek(dt).getDate();
   let nomeDiaSemanaSeis = document.querySelector("#nameOfWeekDaySix");
   let diaSeisDaSemana = dayOneOfWeek(dt).getDay() + 5;
+  
+  
   switch (diaSeisDaSemana) {
-    case 0:
-      nomeDiaSemanaSeis.innerHTML = "Dom";
-      break;
-    case 1:
-      nomeDiaSemanaSeis.innerHTML = "Seg";
-      break;
-    case 2:
-      nomeDiaSemanaSeis.innerHTML = "Ter";
-      break;
-    case 3:
-      nomeDiaSemanaSeis.innerHTML = "Qua";
-      break;
-    case 4:
-      nomeDiaSemanaSeis.innerHTML = "Qui";
-      break;
-    case 5:
+      case 0:
+          nomeDiaSemanaSeis.innerHTML = "Dom";
+          break;
+          case 1:
+              nomeDiaSemanaSeis.innerHTML = "Seg";
+              break;
+              case 2:
+                  nomeDiaSemanaSeis.innerHTML = "Ter";
+                  break;
+                  case 3:
+                      nomeDiaSemanaSeis.innerHTML = "Qua";
+                      break;
+                      case 4:
+                          nomeDiaSemanaSeis.innerHTML = "Qui";
+                          break;
+                          case 5:
       nomeDiaSemanaSeis.innerHTML = "Sex";
       break;
     case 6:
@@ -252,6 +255,8 @@ Date.prototype.getWeek = function () {
   diaSeteSemana.innerHTML = daySevenOfWeek(dt).getDate();
   let nomeDiaSemanaSete = document.querySelector("#nameOfWeekDaySeven");
   let diaSeteDaSemana = dayOneOfWeek(dt).getDay() - 1;
+  
+
   switch (diaSeteDaSemana) {
     case 0:
       nomeDiaSemanaSete.innerHTML = "Dom";
@@ -279,3 +284,49 @@ Date.prototype.getWeek = function () {
       break;
   }
   
+//   daySix == diaSeisDaSemana ? boxDaySix.classList.add('presentDay') : boxDaySix.classList.remove('presentDay');
+  let boxDayOne = document.querySelector("#dayOne");
+  let boxDayTwo = document.querySelector("#dayTwo");
+  let boxDayThree = document.querySelector("#dayThree");
+  let boxDayFour = document.querySelector("#dayFour");
+  let boxDayFive = document.querySelector("#dayFive");
+  let boxDaySix = document.querySelector("#daySix");
+  let boxDaySeven = document.querySelector("#daySeven");
+
+  let presentDayWeek = dayOneOfWeek(dt).getDay() - 1;
+
+  switch (presentDayWeek) {
+      case 0:
+        boxDaySeven.classList.add('presentDay')
+          break;
+      case 1:
+        boxDayOne.classList.add('presentDay')
+          break;
+      case 2:
+        boxDayTwo.classList.add('presentDay')
+          break;
+      case 3:
+        boxDayThree.classList.add('presentDay')
+          break;
+      case 4:
+        boxDayFour.classList.add('presentDay')
+          break;
+      case 5:
+        boxDayFive.classList.add('presentDay')
+          break;
+      case 6:
+        boxDaySix.classList.add('presentDay')
+          break;
+  
+      default:
+          break;
+  }
+
+  console.log(diaUmDaSemana)
+  console.log(diaDoisDaSemana)
+  console.log(diaTresDaSemana)
+  console.log(diaQuatroDaSemana)
+  console.log(diaCincoDaSemana)
+  console.log(diaSeisDaSemana)
+  console.log(diaSeteDaSemana)
+  console.log('Dia da Semana = ' + presentDayWeek)
