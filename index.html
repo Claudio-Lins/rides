@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
+    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+    <link href="/tailwind.css" rel="stylesheet" />
     <style>
       #transition {
         display: block;
@@ -101,6 +102,11 @@
         color: var(--dark-blue);
         opacity: 0.6;
       }
+
+      .presentDay {
+        background: linear-gradient(180deg, rgb(240, 199, 138) 40%, rgb(233, 60, 7) 100%);
+        color: #ffffff !important;
+      }
       /* RESPONSIVE ======================================================*/
       @media (min-width: 800px) {
         html {
@@ -110,67 +116,216 @@
     </style>
     <title>Ride$Finance</title>
   </head>
-  <body class="bg-gray-200">
-    <header class="bg-black flex justify-center items-center h-48">
-      <img src="./assets/logo.svg" width="300px" alt="Logo Dev.Finance" />
+  <body class="bg-gray-200 mx-auto">
+    <header class="bg-black flex flex-col items-center h-[300px] pt-6">
+      <img  class='mb-4' src="./assets/logo.svg" width="330px" alt="Logo Dev.Finance"/>
+      <div class='text-white px-4 border border-white rounded-lg mt-4'>
+        <span id="mes">MES</span>
+        <span id="ano">ANO</span>
+      </div>
+      <!-- Days of week -->
+      <div class="flex justify-evenly space-x-2 mt-2">
+        <!-- Day one -->
+        <div
+        id="dayOne"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDayOne" class=""></span>
+          <span id="dayOneOfWeek" class=""></span>
+        </div>
+        <!-- Day two -->
+        <div
+        id="dayTwo"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDayTwo" class="">XXX</span>
+          <span id="dayTwoOfWeek" class="">00</span>
+        </div>
+        <!-- Day three -->
+        <div
+        id="dayThree"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDayThree" class="">XXX</span>
+          <span id="dayThreeOfWeek" class="">00</span>
+        </div>
+        <!-- Day four -->
+        <div
+        id="dayFour"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDayFour" class="">XXX</span>
+          <span id="dayFourOfWeek" class="">00</span>
+        </div>
+        <!-- Day five -->
+        <div
+        id="dayFive"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDayFive" class="">XXX</span>
+          <span id="dayFiveOfWeek" class="">00</span>
+        </div>
+        <!-- Day six -->
+        <div
+        id="daySix"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDaySix" class="">XXX</span>
+          <span id="daySixOfWeek" class="">00</span>
+        </div>
+        <!-- Day seven -->
+        <div
+          id="daySeven"
+          class="
+            bg-gray-300
+            w-[35px]
+            text-gray-400 text-xs
+            rounded-md
+            flex flex-col
+            justify-center
+            items-center
+            py-2
+            px-1
+          "
+        >
+          <span id="nameOfWeekDaySeven" class="">XXX</span>
+          <span id="daySevenOfWeek" class="">00</span>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Horas -->
+      <div
+        id="minutos"
+        class="mt-2 px-2 text-sm rounded-md shadow-md text-white border border-white"
+      >
+        <span id="hora" class="">00</span>
+        <span id="" class="animate-pulse">:</span>
+        <span id="minuto" class="">00</span>
+        <span id="" class="animate-pulse">:</span>
+        <span id="segundo" class="">00</span>
+      </div>
     </header>
-    <main class="container px-3 pb-10 mx-auto">
-      <section id="balance" class="-mt-12 md:grid md:grid-cols-3 md:gap-4">
+    <main class="md:w-1/3 px-3 pb-10 mx-auto">
+      <section id="balance" class="-mt-14 grid grid-cols-3 gap-2">
         <h2 class="sr-only">Balanço</h2>
 
-        <!-- <div class="flex justify-between space-x-4 px-4 mb-4">
-          <div class="bg-white w-1/3 p-2 rounded-md">
-            <div class="text-xs font-bold">Today</div>
-            <p class="text-xl text-blue-600 leading-relaxed mt-4 font-bold" id="incomeDisplayToday">
-              € 0,00
-            </p>
-          </div>
-          <div class="bg-white w-1/3 p-2 rounded-md">
-            <div class="text-xs font-bold">Week</div>
-            <p class="text-xl text-blue-600 leading-relaxed mt-4 font-bold" id="incomeDisplayToday">
-              € 0,00
-            </p>
-          </div>
-          <div class="bg-white w-1/3 p-2 rounded-md">
-            <div class="text-xs font-bold">Month</div>
-            <p class="text-xl text-blue-600 leading-relaxed mt-4 font-bold" id="incomeDisplayToday">
-              € 0,00
-            </p>
-          </div>
-        </div> -->
-
-        <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
-          <h3 class="text-lg text-center font-normal flex items-center justify-between">
+        <div class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900">
+          <h3
+            class="
+              text-sm text-center
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
             <span>Entradas</span>
-            <img src="./assets/income.svg" alt="Imagem de entradas" />
+            <img src="./assets/income.svg" alt="Imagem de entradas" width='20px' />
           </h3>
-          <p class="text-3xl leading-relaxed mt-4 font-bold" id="incomeDisplay">
+          <p class="text-xl leading-relaxed mt-4 font-bold" id="incomeDisplay">
             € 0,00
           </p>
         </div>
-
-        <div class="bg-white px-6 py-6 mb-8 rounded-md text-blue-900">
-          <h3 class=" text-lg text-center font-normal flex items-center justify-between">
+        <div class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900">
+          <h3
+            class="
+              text-sm text-center
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
             <span>Saídas</span>
-            <img src="./assets/expense.svg" alt="Imagem de saídas" />
+            <img src="./assets/expense.svg" alt="Imagem de saídas" width='20px' />
           </h3>
-          <p class="text-3xl leading-relaxed mt-4 font-bold text-red-700"
-            id="expenseDisplay">
+          <p
+            class="text-xl leading-relaxed mt-4 font-bold text-red-700"
+            id="expenseDisplay"
+          >
             € 0,00
           </p>
         </div>
-
-        <div class="bg-blue-600 px-6 py-6 mb-8 rounded-md">
-          <h3 class=" text-lg text-center text-white font-normal flex items-center justify-between">
+        <div class="bg-blue-600 px-2 py-4 mb-8 rounded-md">
+          <h3
+            class="
+              text-sm text-center text-white
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
             <span>Total</span>
-            <img src="./assets/total.svg" alt="Imagem de total" />
+            <img src="./assets/total.svg" alt="Imagem de total" width='20px' />
           </h3>
-          <p class="text-3xl text-white leading-relaxed mt-4 font-bold"
-            id="totalDisplay">
+          <p
+            class="text-xl text-white leading-relaxed mt-4 font-bold"
+            id="totalDisplay"
+          >
             € 0,00
           </p>
         </div>
-
       </section>
       <section id="translation" class="block w-full overflow-x-auto">
         <h2 class="sr-only">Transações</h2>
@@ -178,7 +333,19 @@
           <a
             href="#"
             onClick="Modal.open()"
-            class="bg-green-700 w-full px-4 py-4 mb-4 rounded-lg text-white text-center text-xl font-bold tracking-wide shadow-md new"
+            class="
+              bg-green-700
+              w-full
+              px-4
+              py-4
+              mb-4
+              rounded-lg
+              text-white text-center text-xl
+              font-bold
+              tracking-wide
+              shadow-md
+              new
+            "
             >Nova Transação</a
           >
         </div>
@@ -194,11 +361,25 @@
           <tbody>
           </tbody>
         </table> -->
-        <div class="bg-white flex items-center px-4 py-2 rounded-md text-left text-gray-800 mb-2 text-sm md:text-xl font-bold">
-            <div class="w-1/3">Descrição</div>
-            <div class="w-1/4 mr-1">Valor</div>
-            <div class="w-1/3">Data</div>
-            <div class=""></div>
+        <div
+          class="
+            bg-white
+            flex
+            items-center
+            px-4
+            py-2
+            rounded-md
+            text-left text-gray-800
+            mb-2
+            text-sm
+            md:text-xl
+            font-bold
+          "
+        >
+          <div class="w-[33%]">Descrição</div>
+          <div class="w-[27%]">Valor</div>
+          <div class="w-[33%]">Data</div>
+          <div class=""></div>
         </div>
         <div id="entradas" class=""></div>
         <!-- <div id="entradas" class="bg-gray-100 flex items-center px-8 py-3  text-left text-gray-500 text-sm rounded-md mb-2">
@@ -214,23 +395,19 @@
         <div class="form">
           <h2 class="font-bold text-lg">Nova Transação</h2>
           <form action="" onsubmit="Form.submit(event)">
-            <!-- <div class="input-group">
-              <label class="sr-only" for="description">Descrição</label>
-              <input
-                type="text"
+            <div>
+              <select
                 id="description"
                 name="description"
-                placeholder="Descrição"
-              />
-            </div> -->
-            <!-- <div class='flex justify-between text-center text-sm py-2 space-x-1 text-white'>
-                <div class="w-1/4 px-3 py-2 bg-black rounded-md shadow-md outline-none"><button id="uber" name='uber'>Uber</button></div>
-                <div class="w-1/4 px-3 py-2 bg-green-700 rounded-md shadow-md outline-none"><button id='bolt'>Bolt</button></div>
-                <div class="w-1/4 px-1 py-2 bg-blue-700 rounded-md shadow-md outline-none"><button id='freenow'>FreeNow</button></div>
-                <div class="w-1/4 px-3 py-2 bg-red-700 rounded-md shadow-md outline-none"><button id='cash'>Cash</button></div>
-            </div> -->
-            <div>
-              <select id="description" name="description" class="w-full h-12 bg-green-400 text-xl font-semibold rounded-sm">
+                class="
+                  w-full
+                  h-12
+                  bg-green-400
+                  text-xl
+                  font-semibold
+                  rounded-sm
+                "
+              >
                 <option value="">Descrição</option>
                 <option value="Uber" selected>Uber</option>
                 <option value="Bolt">Bolt</option>
@@ -255,11 +432,7 @@
             </div>
             <div class="input-group">
               <label class="sr-only" for="date">Data</label>
-              <input
-              type="date"
-              id="date"
-              name="date"
-              />
+              <input type="date" id="date" name="date" />
             </div>
             <div class="input-group actions">
               <a
@@ -296,6 +469,8 @@
       </div>
     </div>
     <footer><p>ride$.finance</p></footer>
-    <script src="./scripts.js"></script>
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/datas.js"></script>
+    <script src="./scripts/week.js"></script>
   </body>
 </html>
