@@ -311,3 +311,4 @@ App.init();
 // }
 // console.log(presentDayIncome);
 // }
+console.log(localStorage.getItem("id"))

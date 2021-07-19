@@ -7,5 +7,10 @@
     @apply text-[#e92929];
   }
 
+ .diaAtual {
+  @apply bg-gradient-to-t from-pink-500 to-blue-600 text-white font-bold;
+ }
+
+
 
 @tailwind utilities;
