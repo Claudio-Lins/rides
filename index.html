@@ -4,25 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/metas.css" />
-    <link href="/tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/styles.css" />
 
     <style>
-      .incomeMetaUm {
-        color: #eb3406;
+      
+      /* MODAL ======================================================*/
+      .modal-overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 100;
       }
-      .incomeMetaDois {
-        color: #d68c37;
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
       }
-      .incomeMetaTres {
-        color: #c6d637;
+      .modal {
+        background: #f0f2f5;
+        padding: 2.4rem;
       }
-      .incomeMetaQuatro {
-        color: #57d637;
+      #form {
+        max-width: 500px;
       }
-      .incomeMetaCinco {
-        color: #3774d6;
+      #form h2 {
+        margin-top: 0;
+      }
+      input {
+        border: none;
+        border-radius: 0.2rem;
+        padding: 0.8rem;
+        width: 100%;
+      }
+      .input-group {
+        margin-top: 0.8rem;
+      }
+
+      .input-group.actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer {
+        text-align: center;
+        font-weight: 100;
+        padding: 4rem 0 2rem;
+        color: var(--dark-blue);
+        opacity: 0.6;
+      }
+
+      .presentDay {
+        background: linear-gradient(180deg, rgb(240, 199, 138) 40%, rgb(233, 60, 7) 100%);
+        color: #ffffff !important;
+      }
+      /* RESPONSIVE ======================================================*/
+      @media (min-width: 800px) {
+        html {
+          font-size: 87.5%;
+        }
       }
     </style>
 

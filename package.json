@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "build": "TAILWIND_MODE=watch postcss tailwind.css -o ./style/styles.css -w --verbose",
+    "prod": "NODE_ENV=production postcss tailwind.css -o ./style/styles.css"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/Claudio-Lins/rides#readme",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
+    "cssnano": "^5.0.6",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.2.4"
   }
