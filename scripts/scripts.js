@@ -311,4 +311,40 @@ App.init();
 // }
 // console.log(presentDayIncome);
 // }
-console.log(localStorage.getItem("id"))
+
+let incomeMetas = Transaction.incomes() / 100;
+let boxMetaToday = document.querySelector("#metaToday");
+
+if (incomeMetas > 0 && incomeMetas < 10) {
+  boxMetaToday.classList.add("metaTodayUm");
+  alert("Meta 1");
+} else if (incomeMetas > 11 && incomeMetas < 20) {
+  boxMetaToday.classList.add("metaTodayDois");
+  alert("Meta 2");
+} else if (incomeMetas > 21 && incomeMetas < 30) {
+  boxMetaToday.classList.add("metaTodayTres");
+  alert("Meta 3");
+} else if (incomeMetas > 31 && incomeMetas < 40) {
+  boxMetaToday.classList.add("metaTodayQuatro");
+  alert("Meta 4");
+} else if (incomeMetas > 41 && incomeMetas < 50) {
+  boxMetaToday.classList.add("metaTodayCinco");
+  alert("Meta 5");
+} else if (incomeMetas > 51 && incomeMetas <= 60) {
+  boxMetaToday.classList.add("metaTodaySeis");
+  alert("Meta 6");
+} else if (incomeMetas > 61 && incomeMetas < 70) {
+  boxMetaToday.classList.add("metaTodaySete");
+  alert("Meta 7");
+} else if (incomeMetas > 71 && incomeMetas < 80) {
+  boxMetaToday.classList.add("metaTodayOito");
+  alert("Meta 8");
+} else if (incomeMetas > 81 && incomeMetas < 90) {
+  boxMetaToday.classList.add("metaTodayNove");
+  alert("Meta 9");
+} else {
+  boxMetaToday.classList.add("metaTodayDez");
+  alert("Meta 10");
+}
+
+console.log(incomeMetas);

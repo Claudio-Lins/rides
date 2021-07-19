@@ -11,6 +11,36 @@
   @apply bg-gradient-to-t from-pink-500 to-blue-600 text-white font-bold;
  }
 
+ .metaTodayUm {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[10px];
+ }
+ .metaTodayDois {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[20px];
+ }
+ .metaTodayTres {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[30px];
+ }
+ .metaTodayQuatro {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[40px];
+ }
+ .metaTodayCinco {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[50px];
+ }
+ .metaTodaySeis {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[60px];
+ }
+ .metaTodaySete {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[70px];
+ }
+ .metaTodayOito {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[80px];
+ }
+ .metaTodayNove {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[90px];
+ }
+ .metaTodayDez {
+   @apply bg-gradient-to-t from-red-500 via-yellow-700 to-blue-700 h-[100px];
+ }
 
 
 @tailwind utilities;
