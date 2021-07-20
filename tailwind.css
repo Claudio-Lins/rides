@@ -12,34 +12,34 @@
  }
 
  .metaTodayUm {
-   @apply bg-red-500 h-[10px];
+   @apply rounded-md shadow-md w-[100px] bg-red-500 h-[10px];
  }
  .metaTodayDois {
-   @apply bg-yellow-700 h-[20px];
+   @apply rounded-md shadow-md w-[100px] bg-yellow-700 h-[20px];
  }
  .metaTodayTres {
-   @apply bg-yellow-500 h-[30px];
+   @apply rounded-md shadow-md w-[100px] bg-yellow-500 h-[30px];
  }
  .metaTodayQuatro {
-   @apply bg-yellow-300 h-[40px];
+   @apply rounded-md shadow-md w-[100px] bg-yellow-300 h-[40px];
  }
  .metaTodayCinco {
-   @apply bg-yellow-100 h-[50px];
+   @apply rounded-md shadow-md w-[100px] bg-yellow-100 h-[50px];
  }
  .metaTodaySeis {
-   @apply bg-green-300 h-[60px];
+   @apply rounded-md shadow-md w-[100px] bg-green-300 h-[60px];
  }
  .metaTodaySete {
-   @apply bg-green-600 h-[70px];
+   @apply rounded-md shadow-md w-[100px] bg-green-600 h-[70px];
  }
  .metaTodayOito {
-   @apply bg-blue-300 h-[80px];
+   @apply rounded-md shadow-md w-[100px] bg-blue-300 h-[80px];
  }
  .metaTodayNove {
-   @apply bg-blue-400 h-[90px];
+   @apply rounded-md shadow-md w-[100px] bg-blue-400 h-[90px];
  }
  .metaTodayDez {
-   @apply bg-blue-800 h-[100px];
+   @apply rounded-md shadow-md w-[100px] bg-blue-800 h-[100px];
  }
 
 

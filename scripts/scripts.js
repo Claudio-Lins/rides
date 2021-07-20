@@ -261,32 +261,7 @@ const Form = {
     Form.date.value = "";
   },
 
-   metas() {
-    let incomeMetas = Transaction.incomes() / 100;
-    let boxMetaToday = document.querySelector("#metaToday");
-  
-    if (incomeMetas > 0 && incomeMetas < 10) {
-      boxMetaToday.classList.add("metaTodayUm");
-    } else if (incomeMetas > 11 && incomeMetas < 20) {
-      boxMetaToday.classList.add("metaTodayDois");
-    } else if (incomeMetas > 21 && incomeMetas < 30) {
-      boxMetaToday.classList.add("metaTodayTres");
-    } else if (incomeMetas > 31 && incomeMetas < 40) {
-      boxMetaToday.classList.add("metaTodayQuatro");
-    } else if (incomeMetas > 41 && incomeMetas < 50) {
-      boxMetaToday.classList.add("metaTodayCinco");
-    } else if (incomeMetas > 51 && incomeMetas <= 60) {
-      boxMetaToday.classList.add("metaTodaySeis");
-    } else if (incomeMetas > 61 && incomeMetas < 70) {
-      boxMetaToday.classList.add("metaTodaySete");
-    } else if (incomeMetas > 71 && incomeMetas < 80) {
-      boxMetaToday.classList.add("metaTodayOito");
-    } else if (incomeMetas > 81 && incomeMetas < 90) {
-      boxMetaToday.classList.add("metaTodayNove");
-    } else {
-      boxMetaToday.classList.add("metaTodayDez");
-    }
-  },
+   
 
   submit(event) {
     event.preventDefault();
@@ -301,8 +276,6 @@ const Form = {
       // apagar os dados do formulário
       Form.clearFields();
       // modal feche
-      Form.metas();
-
       Modal.close();
       // atualizar a aplicação // Já temos um App.reload() no add
     } catch (error) {
@@ -342,4 +315,40 @@ App.init();
 // }
 
 
-console.log(incomeMetas);
+setInterval(metas, 1000);
+function metas() {
+  let incomeMetas = Transaction.incomes() / 100;
+  let boxMetaToday = document.querySelector("#metaToday");
+
+  if (incomeMetas >= 0 && incomeMetas <= 10) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayUm");
+  } else if (incomeMetas >= 11 && incomeMetas <= 20) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayDois");
+  } else if (incomeMetas >= 21 && incomeMetas <= 30) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayTres");
+  } else if (incomeMetas >= 31 && incomeMetas <= 40) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayQuatro");
+  } else if (incomeMetas >= 41 && incomeMetas <= 50) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayCinco");
+  } else if (incomeMetas >= 51 && incomeMetas <= 60) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodaySeis");
+  } else if (incomeMetas >= 61 && incomeMetas <= 70) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodaySete");
+  } else if (incomeMetas >= 71 && incomeMetas <= 80) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayOito");
+  } else if (incomeMetas >= 81 && incomeMetas <= 90) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayNove");
+  } else {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayDez");
+  }
+}
