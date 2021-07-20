@@ -4,53 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
-    <link href="/tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+
     <style>
-      #transition {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-      }
-      #data-table {
-        width: 100%;
-        border-spacing: 0 0.5rem;
-        color: #969cb3;
-      }
-      table thead tr th:first-child,
-      table tbody tr td:first-child {
-        border-radius: 0.25rem 0 0 0.25rem;
-      }
-      table thead tr th:last-child,
-      table tbody tr td:last-child {
-        border-radius: 0 0.25rem 0.25rem 0;
-      }
-      table thead th {
-        background: #fff;
-        font-weight: normal;
-        padding: 1rem 2rem;
-        text-align: left;
-      }
-      table tbody tr {
-        opacity: 0.7;
-      }
-      table tr:hover {
-        opacity: 1;
-      }
-      table tbody td {
-        background: #fff;
-        padding: 1rem 2rem;
-      }
-      td.description {
-        color: var(--dark-blue);
-      }
-      .income {
-        color: #12a454;
-        width: 25%;
-      }
-      .expense {
-        color: #e92929;
-      }
       /* MODAL ======================================================*/
       .modal-overlay {
         width: 100%;
@@ -104,7 +60,11 @@
       }
 
       .presentDay {
-        background: linear-gradient(180deg, rgb(240, 199, 138) 40%, rgb(233, 60, 7) 100%);
+        background: linear-gradient(
+          180deg,
+          rgb(240, 199, 138) 40%,
+          rgb(233, 60, 7) 100%
+        );
         color: #ffffff !important;
       }
       /* RESPONSIVE ======================================================*/
@@ -114,12 +74,18 @@
         }
       }
     </style>
+
     <title>Ride$Finance</title>
   </head>
   <body class="bg-gray-200 mx-auto">
     <header class="bg-black flex flex-col items-center h-[300px] pt-6">
-      <img  class='mb-4' src="./assets/logo.svg" width="330px" alt="Logo Dev.Finance"/>
-      <div class='text-white px-4 border border-white rounded-lg mt-4'>
+      <img
+        class="mb-4 ml-2"
+        src="./assets/logo.svg"
+        width="330px"
+        alt="Logo Dev.Finance"
+      />
+      <div class="text-white px-4 border border-white rounded-lg mt-4">
         <span id="mes">MES</span>
         <span id="ano">ANO</span>
       </div>
@@ -127,9 +93,9 @@
       <div class="flex justify-evenly space-x-2 mt-2">
         <!-- Day one -->
         <div
-        id="dayOne"
+          id="dayOne"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -140,14 +106,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDayOne" class=""></span>
+          <span id="nameOfWeekDayOne" class="">Seg</span>
           <span id="dayOneOfWeek" class=""></span>
         </div>
         <!-- Day two -->
         <div
-        id="dayTwo"
+          id="dayTwo"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -158,14 +124,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDayTwo" class="">XXX</span>
+          <span id="nameOfWeekDayTwo" class="">Ter</span>
           <span id="dayTwoOfWeek" class="">00</span>
         </div>
         <!-- Day three -->
         <div
-        id="dayThree"
+          id="dayThree"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -176,14 +142,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDayThree" class="">XXX</span>
+          <span id="nameOfWeekDayThree" class="">Qua</span>
           <span id="dayThreeOfWeek" class="">00</span>
         </div>
         <!-- Day four -->
         <div
-        id="dayFour"
+          id="dayFour"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -194,14 +160,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDayFour" class="">XXX</span>
+          <span id="nameOfWeekDayFour" class="">Qui</span>
           <span id="dayFourOfWeek" class="">00</span>
         </div>
         <!-- Day five -->
         <div
-        id="dayFive"
+          id="dayFive"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -212,14 +178,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDayFive" class="">XXX</span>
+          <span id="nameOfWeekDayFive" class="">Sex</span>
           <span id="dayFiveOfWeek" class="">00</span>
         </div>
         <!-- Day six -->
         <div
-        id="daySix"
+          id="daySix"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -230,14 +196,14 @@
             px-1
           "
         >
-          <span id="nameOfWeekDaySix" class="">XXX</span>
+          <span id="nameOfWeekDaySix" class="">Sab</span>
           <span id="daySixOfWeek" class="">00</span>
         </div>
         <!-- Day seven -->
         <div
           id="daySeven"
           class="
-            bg-gray-300
+            bg-gray-50
             w-[35px]
             text-gray-400 text-xs
             rounded-md
@@ -248,7 +214,7 @@
             px-1
           "
         >
-          <span id="nameOfWeekDaySeven" class="">XXX</span>
+          <span id="nameOfWeekDaySeven" class="">Dom</span>
           <span id="daySevenOfWeek" class="">00</span>
         </div>
       </div>
@@ -256,7 +222,15 @@
       <!-- Horas -->
       <div
         id="minutos"
-        class="mt-2 px-2 text-sm rounded-md shadow-md text-white border border-white"
+        class="
+          mt-2
+          px-2
+          text-sm
+          rounded-md
+          shadow-md
+          text-white
+          border border-white
+        "
       >
         <span id="hora" class="">00</span>
         <span id="" class="animate-pulse">:</span>
@@ -265,11 +239,14 @@
         <span id="segundo" class="">00</span>
       </div>
     </header>
-    <main class="md:w-1/3 px-3 pb-10 mx-auto">
+    <main class="md:w-1/3 px-3 mx-auto">
       <section id="balance" class="-mt-14 grid grid-cols-3 gap-2">
         <h2 class="sr-only">Balanço</h2>
 
-        <div class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900">
+        <div
+          id="incomePresentBox"
+          class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900"
+        >
           <h3
             class="
               text-sm text-center
@@ -279,10 +256,12 @@
               justify-between
             "
           >
-            <span>Entradas</span>
-            <img src="./assets/income.svg" alt="Imagem de entradas" width='20px' />
+            <span>Today</span>
           </h3>
-          <p class="text-xl leading-relaxed mt-4 font-bold" id="incomeDisplay">
+          <p
+            class="text-xl leading-relaxed mt-4 font-bold"
+            id="incomePresentDisplay"
+          >
             € 0,00
           </p>
         </div>
@@ -296,8 +275,92 @@
               justify-between
             "
           >
+            <span>Week</span>
+          </h3>
+          <p
+            class="text-xl leading-relaxed mt-4 font-bold text-blue-900"
+            id="incomeWeekDisplay"
+          >
+            € 0,00
+          </p>
+        </div>
+        <div class="bg-blue-600 py-4 px-2 mb-8 rounded-md">
+          <h3
+            class="
+              text-sm text-center text-white
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
+            <span>Month</span>
+          </h3>
+          <p
+            class="text-xl text-white leading-relaxed mt-4 font-bold"
+            id="incomeMonthDisplay"
+          >
+            € 0,00
+          </p>
+        </div>
+      </section>
+      <section class="bg-white -mt-6 flex justify-center items-end py-2 my-2 rounded-md h-[150px] space-x-3">
+        <div class="flex flex-col items-center justify-start">
+          <div id="metaToday" class="w-[100px]"></div>
+          <div class='text-sm text-blue-700'>Today</div>
+        </div>
+        <div class="flex flex-col items-center justify-start">
+          <div class="bg-gradient-to-t from-red-500 via-yellow-700 to-blue-600 rounded-md shadow-md w-[100px] h-[20px]"></div>
+          <div class='text-sm text-blue-700'>Week</div>
+        </div>
+        <div class="flex flex-col items-center justify-start">
+          <div class="bg-gradient-to-t from-red-500 via-yellow-800 to-blue-600 rounded-md shadow-md w-[100px] h-[75px]"></div>
+          <div class='text-sm text-blue-700'>Month</div>
+        </div>
+      </section>
+      <section id="balance" class="grid grid-cols-3 gap-2">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div
+          id="incomeDisplayBox"
+          class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900"
+        >
+          <h3
+            class="
+              text-sm text-center
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
+            <span>Entradas</span>
+            <img
+              src="./assets/income.svg"
+              alt="Imagem de entradas"
+              width="20px"
+            />
+          </h3>
+          <p class="text-xl leading-relaxed mt-4 font-bold" id="incomeDisplay">
+            
+          </p>
+        </div>
+        <div class="bg-white px-2 py-4 mb-8 rounded-md text-blue-900">
+          <h3
+            class="
+              text-sm text-center
+              font-normal
+              flex
+              items-center
+              justify-between
+            "
+          >
             <span>Saídas</span>
-            <img src="./assets/expense.svg" alt="Imagem de saídas" width='20px' />
+            <img
+              src="./assets/expense.svg"
+              alt="Imagem de saídas"
+              width="20px"
+            />
           </h3>
           <p
             class="text-xl leading-relaxed mt-4 font-bold text-red-700"
@@ -317,7 +380,7 @@
             "
           >
             <span>Total</span>
-            <img src="./assets/total.svg" alt="Imagem de total" width='20px' />
+            <img src="./assets/total.svg" alt="Imagem de total" width="20px" />
           </h3>
           <p
             class="text-xl text-white leading-relaxed mt-4 font-bold"
@@ -472,5 +535,6 @@
     <script src="./scripts/scripts.js"></script>
     <script src="./scripts/datas.js"></script>
     <script src="./scripts/week.js"></script>
+    <script>metas()</script>
   </body>
 </html>

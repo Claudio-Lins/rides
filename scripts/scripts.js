@@ -1,5 +1,3 @@
-
-
 const Modal = {
   open() {
     // Abrir Modal
@@ -68,7 +66,7 @@ const Transaction = {
 
   incomes() {
     let income = 0;
-    const comissao = '0.80';
+    const comissao = "0.80";
 
     //pegar todas as Transações
     //para cada transação,
@@ -135,7 +133,7 @@ const DOM = {
   },
 
   innerHTMLTransaction(transaction, index) {
-    const comissao = '0.80';
+    const comissao = "0.80";
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass =
       transaction.description == "Combustível" ? "expense" : "income";
@@ -193,7 +191,7 @@ const Utils = {
   formateAmount(value) {
     // value = value * 100;
     // value = Number(value.replace(/\,\./g, "")) * 100
-    value = value * 100
+    value = value * 100;
     return Math.round(value);
   },
 
@@ -263,6 +261,8 @@ const Form = {
     Form.date.value = "";
   },
 
+   
+
   submit(event) {
     event.preventDefault();
 
@@ -302,16 +302,53 @@ const App = {
 
 App.init();
 
+// myDate = new Date();
+// presentDay = myDate.getDate();
 
-console.log(Math.round(Transaction.incomes()) / 100);
+// setInterval(metas, 1000)
+// function metas() {
+// let presentDayIncome = Math.round(Transaction.incomes()) / 100;
+// if (presentDayIncome == 1) {
+//   document.querySelector("#incomeDisplay").classList.add('bg-black');
+// }
+// console.log(presentDayIncome);
+// }
 
-myDate = new Date();
-dataAtual = myDate.getDate();
 
-console.log(dataAtual);
+setInterval(metas, 1000);
+function metas() {
+  let incomeMetas = Transaction.incomes() / 100;
+  let boxMetaToday = document.querySelector("#metaToday");
 
-function presentIncomes() {
-  return 'ok'
+  if (incomeMetas >= 0 && incomeMetas <= 10) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayUm");
+  } else if (incomeMetas >= 11 && incomeMetas <= 20) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayDois");
+  } else if (incomeMetas >= 21 && incomeMetas <= 30) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayTres");
+  } else if (incomeMetas >= 31 && incomeMetas <= 40) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayQuatro");
+  } else if (incomeMetas >= 41 && incomeMetas <= 50) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayCinco");
+  } else if (incomeMetas >= 51 && incomeMetas <= 60) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodaySeis");
+  } else if (incomeMetas >= 61 && incomeMetas <= 70) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodaySete");
+  } else if (incomeMetas >= 71 && incomeMetas <= 80) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayOito");
+  } else if (incomeMetas >= 81 && incomeMetas <= 90) {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayNove");
+  } else {
+    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.add("metaTodayDez");
+  }
 }
-
-console.log(presentIncomes());
