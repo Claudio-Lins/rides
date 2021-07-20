@@ -604,83 +604,53 @@ video {
 
  .metaTodayUm {
 	height: 10px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
 }
  .metaTodayDois {
 	height: 20px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(180, 83, 9, var(--tw-bg-opacity));
 }
  .metaTodayTres {
 	height: 30px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity));
 }
  .metaTodayQuatro {
 	height: 40px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
 }
  .metaTodayCinco {
 	height: 50px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(254, 243, 199, var(--tw-bg-opacity));
 }
  .metaTodaySeis {
 	height: 60px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
 }
  .metaTodaySete {
 	height: 70px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(5, 150, 105, var(--tw-bg-opacity));
 }
  .metaTodayOito {
 	height: 80px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
 }
  .metaTodayNove {
 	height: 90px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
  .metaTodayDez {
 	height: 100px;
-	background-image: linear-gradient(to top, var(--tw-gradient-stops));
-	--tw-gradient-from: #ef4444;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 68, 68, 0));
-	--tw-gradient-stops: var(--tw-gradient-from), #b45309, var(--tw-gradient-to, rgba(180, 83, 9, 0));
-	--tw-gradient-to: #1d4ed8;
+	--tw-bg-opacity: 1;
+	background-color: rgba(30, 64, 175, var(--tw-bg-opacity));
 }
 
 
