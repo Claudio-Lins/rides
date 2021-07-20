@@ -17,11 +17,5 @@
   "bugs": {
     "url": "https://github.com/Claudio-Lins/rides/issues"
   },
-  "homepage": "https://github.com/Claudio-Lins/rides#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^5.0.6",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.2.4"
-  }
+  "homepage": "https://github.com/Claudio-Lins/rides#readme"
 }
