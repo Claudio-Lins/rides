@@ -286,7 +286,10 @@ let boxDayFive = document.querySelector("#dayFive");
 let boxDaySix = document.querySelector("#daySix");
 let boxDaySeven = document.querySelector("#daySeven");
 
-let presentDayWeek = dayOneOfWeek(dt).getUTCDay() + 1;
+myDate = new Date();
+diaSemana = myDate.getDay() - 1;
+
+let presentDayWeek = dayOneOfWeek(dt).getUTCDay() + diaSemana;
 switch (presentDayWeek) {
   case 0:
     boxDaySeven.classList.add("diaAtual");
@@ -319,17 +322,19 @@ switch (presentDayWeek) {
 
   default:
     break;
-}
-
-// let presentDayOfWeek = dayOneOfWeek(dt).getDay();
-// console.log(dayOneOfWeek(dt).getUTCDay());
-// console.log(dayTwoOfWeek(dt).getUTCDay());
-// console.log(dayThreeOfWeek(dt).getUTCDay());
-// console.log(dayFourOfWeek(dt).getUTCDay());
-// console.log(dayFiveOfWeek(dt).getUTCDay());
-// console.log(daySixOfWeek(dt).getUTCDay());
-// console.log(daySevenOfWeek(dt).getUTCDay());
-// console.log(presentDayWeek = dayOneOfWeek(dt).getDay());
-
-console.log(dayOneOfWeek(dt).getUTCDay());
-
+  }
+  
+  // let presentDayOfWeek = dayOneOfWeek(dt).getDay();
+  // console.log(dayOneOfWeek(dt).getUTCDay());
+  // console.log(dayTwoOfWeek(dt).getUTCDay());
+  // console.log(dayThreeOfWeek(dt).getUTCDay());
+  // console.log(dayFourOfWeek(dt).getUTCDay());
+  // console.log(dayFiveOfWeek(dt).getUTCDay());
+  // console.log(daySixOfWeek(dt).getUTCDay());
+  // console.log(daySevenOfWeek(dt).getUTCDay());
+  // console.log(presentDayWeek = dayOneOfWeek(dt).getDay());
+  
+  
+  
+ 
+  console.log(diaSemana);
