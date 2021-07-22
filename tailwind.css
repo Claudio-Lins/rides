@@ -995,8 +995,40 @@ video {
     width: 33.333333%;
   }
 
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-}
+ .diaAtual {
+  @apply bg-gradient-to-t from-pink-500 to-blue-600 text-white font-bold;
+ }
+
+ .metaTodayUm {
+   @apply rounded-md shadow-md w-[100px] bg-[#de2024] h-[10px];
+ }
+ .metaTodayDois {
+   @apply rounded-md shadow-md w-[100px] bg-[#952e7f] h-[20px];
+ }
+ .metaTodayTres {
+   @apply rounded-md shadow-md w-[100px] bg-[#7b339f] h-[30px];
+ }
+ .metaTodayQuatro {
+   @apply rounded-md shadow-md w-[100px] bg-[#6e35af] h-[40px];
+ }
+ .metaTodayCinco {
+   @apply rounded-md shadow-md w-[100px] bg-[#6138bf] h-[50px];
+ }
+ .metaTodaySeis {
+   @apply rounded-md shadow-md w-[100px] bg-[#543ad0] h-[60px];
+ }
+ .metaTodaySete {
+   @apply rounded-md shadow-md w-[100px] bg-[#483dde] h-[70px];
+ }
+ .metaTodayOito {
+   @apply rounded-md shadow-md w-[100px] bg-[#483dde] h-[80px];
+ }
+ .metaTodayNove {
+   @apply rounded-md shadow-md w-[100px] bg-[#3540f6] h-[90px];
+ }
+ .metaTodayDez {
+   @apply rounded-md shadow-md w-[100px] bg-[#2f42fe] h-[100px];
+ }
+
+
+@tailwind utilities;

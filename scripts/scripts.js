@@ -314,6 +314,10 @@ App.init();
 // console.log(presentDayIncome);
 // }
 
+console.log(Math.round(Transaction.incomes()) / 100)
+console.log(Transaction.incomes())
+
+
 
 setInterval(metas, 1000);
 function metas() {
