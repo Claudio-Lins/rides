@@ -13,12 +13,13 @@
 // Start week
 // SEGUNDA FEIRA
 function dayOneOfWeek(date) {
-  var dayOneWeek =
-    date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
+  var dayOneWeek = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
   return new Date(date.setDate(dayOneWeek));
 }
 dt = new Date();
 let diaUmSemana = document.querySelector("#dayOneOfWeek").innerHTML = dayOneOfWeek(dt).getDate();
+
+
 // diaUmSemana.innerHTML = dayOneOfWeek(dt).getDate();
 // let nomeDiaSemanaUm = document.querySelector("#nameOfWeekDayOne");
 // let diaUmDaSemana = dayOneOfWeek(dt).getDay();
@@ -335,6 +336,4 @@ switch (presentDayWeek) {
   // console.log(presentDayWeek = dayOneOfWeek(dt).getDay());
   
   
-  
  
-  console.log(diaSemana);
