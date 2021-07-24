@@ -1,4 +1,4 @@
-let CurrentWeek
+let CurrentWeek;
 Date.prototype.getWeek = function () {
   var onejan = new Date(this.getFullYear(), 0, 1);
   var today = new Date(this.getFullYear(), this.getMonth(), this.getDate());
@@ -7,19 +7,20 @@ Date.prototype.getWeek = function () {
 };
 
 var today = new Date();
-var currentWeekNumber = today.getWeek()-1;
-document.querySelector('#currentWeek').innerHTML = currentWeekNumber;
-console.log('Semana: ' + currentWeekNumber);
+var currentWeekNumber = today.getWeek() - 1;
+document.querySelector("#currentWeek").innerHTML = currentWeekNumber;
+console.log("Semana: " + currentWeekNumber);
 
 // Start week
 // SEGUNDA FEIRA
 function dayOneOfWeek(date) {
-  var dayOneWeek = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
+  var dayOneWeek =
+    date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
   return new Date(date.setDate(dayOneWeek));
 }
 dt = new Date();
-let diaUmSemana = document.querySelector("#dayOneOfWeek").innerHTML = dayOneOfWeek(dt).getDate();
-
+let diaUmSemana = (document.querySelector("#dayOneOfWeek").innerHTML =
+  dayOneOfWeek(dt).getDate());
 
 // diaUmSemana.innerHTML = dayOneOfWeek(dt).getDate();
 // let nomeDiaSemanaUm = document.querySelector("#nameOfWeekDayOne");
@@ -57,7 +58,8 @@ function dayTwoOfWeek(date) {
   return new Date(date.setDate(dayTwoWeek));
 }
 dt = new Date();
-let diaDoiSemana = document.querySelector("#dayTwoOfWeek").innerHTML = dayTwoOfWeek(dt).getDate();
+let diaDoiSemana = (document.querySelector("#dayTwoOfWeek").innerHTML =
+  dayTwoOfWeek(dt).getDate());
 // diaDoiSemana.innerHTML = dayTwoOfWeek(dt).getDate();
 // let nomeDiaSemanaDois = document.querySelector("#nameOfWeekDayTwo");
 // let diaDoisDaSemana = dayOneOfWeek(dt).getDay() + 1;
@@ -94,7 +96,8 @@ function dayThreeOfWeek(date) {
   return new Date(date.setDate(dayThreeWeek));
 }
 dt = new Date();
-let diaTresSemana = document.querySelector("#dayThreeOfWeek").innerHTML = dayThreeOfWeek(dt).getDate();
+let diaTresSemana = (document.querySelector("#dayThreeOfWeek").innerHTML =
+  dayThreeOfWeek(dt).getDate());
 // diaTresSemana.innerHTML = dayThreeOfWeek(dt).getDate();
 // let nomeDiaSemanaTres = document.querySelector("#nameOfWeekDayThree");
 // let diaTresDaSemana = dayOneOfWeek(dt).getDay() + 2;
@@ -132,7 +135,8 @@ function dayFourOfWeek(date) {
   return new Date(date.setDate(dayFourWeek));
 }
 dt = new Date();
-let diaQuatroSemana = document.querySelector("#dayFourOfWeek").innerHTML = dayFourOfWeek(dt).getDate();
+let diaQuatroSemana = (document.querySelector("#dayFourOfWeek").innerHTML =
+  dayFourOfWeek(dt).getDate());
 // diaQuatroSemana.innerHTML = dayFourOfWeek(dt).getDate();
 // let nomeDiaSemanaQuatro = document.querySelector("#nameOfWeekDayFour");
 // let diaQuatroDaSemana = dayOneOfWeek(dt).getDay() + 3;
@@ -170,7 +174,8 @@ function dayFiveOfWeek(date) {
   return new Date(date.setDate(dayFiveWeek));
 }
 dt = new Date();
-let diaCincoSemana = document.querySelector("#dayFiveOfWeek").innerHTML = dayFiveOfWeek(dt).getDate();
+let diaCincoSemana = (document.querySelector("#dayFiveOfWeek").innerHTML =
+  dayFiveOfWeek(dt).getDate());
 // diaCincoSemana.innerHTML = dayFiveOfWeek(dt).getDate();
 // let nomeDiaSemanaCinco = document.querySelector("#nameOfWeekDayFive");
 // let diaCincoDaSemana = dayOneOfWeek(dt).getDay() + 4;
@@ -209,7 +214,8 @@ function daySixOfWeek(date) {
   return new Date(date.setDate(daySixWeek));
 }
 dt = new Date();
-let diaSeisSemana = document.querySelector("#daySixOfWeek").innerHTML = daySixOfWeek(dt).getDate();
+let diaSeisSemana = (document.querySelector("#daySixOfWeek").innerHTML =
+  daySixOfWeek(dt).getDate());
 // diaSeisSemana.innerHTML = daySixOfWeek(dt).getDate();
 // let nomeDiaSemanaSeis = document.querySelector("#nameOfWeekDaySix");
 // let diaSeisDaSemana = dayOneOfWeek(dt).getDay() + 5;
@@ -243,12 +249,13 @@ let diaSeisSemana = document.querySelector("#daySixOfWeek").innerHTML = daySixOf
 
 // DOMINGO
 function daySevenOfWeek(date) {
-  var daySevenWeek =
-    date.getDate() - date.getDay() + (date.getDay() === 0 ? 0 : 7);
+  let daySevenWeek =
+    date.getDate() - date.getDay() + (date.getDay() === 1 ? 0 : 7);
   return new Date(date.setDate(daySevenWeek));
 }
 // dt = new Date();
-let diaSeteSemana = document.querySelector("#daySevenOfWeek").innerHTML = daySevenOfWeek(dt).getDate();
+let diaSeteSemana = (document.querySelector("#daySevenOfWeek").innerHTML =
+  daySevenOfWeek(dt).getDate());
 // diaSeteSemana.innerHTML = daySevenOfWeek(dt).getDate();
 // let nomeDiaSemanaSete = document.querySelector("#nameOfWeekDaySeven");
 // let diaSeteDaSemana = dayOneOfWeek(dt).getDay() - 1;
@@ -289,7 +296,7 @@ let boxDaySix = document.querySelector("#daySix");
 let boxDaySeven = document.querySelector("#daySeven");
 
 myDate = new Date();
-diaSemana = myDate.getDay() - 1;
+diaSemana = myDate.getDay();
 
 let presentDayWeek = dayOneOfWeek(dt).getUTCDay() + diaSemana;
 switch (presentDayWeek) {
@@ -324,17 +331,15 @@ switch (presentDayWeek) {
 
   default:
     break;
-  }
-  
-  // let presentDayOfWeek = dayOneOfWeek(dt).getDay();
-  // console.log(dayOneOfWeek(dt).getUTCDay());
-  // console.log(dayTwoOfWeek(dt).getUTCDay());
-  // console.log(dayThreeOfWeek(dt).getUTCDay());
-  // console.log(dayFourOfWeek(dt).getUTCDay());
-  // console.log(dayFiveOfWeek(dt).getUTCDay());
-  // console.log(daySixOfWeek(dt).getUTCDay());
-  // console.log(daySevenOfWeek(dt).getUTCDay());
-  // console.log(presentDayWeek = dayOneOfWeek(dt).getDay());
-  
-  
- 
+}
+console.log(presentDayWeek);
+
+// let presentDayOfWeek = dayOneOfWeek(dt).getDay();
+// console.log(dayOneOfWeek(dt).getUTCDay());
+// console.log(dayTwoOfWeek(dt).getUTCDay());
+// console.log(dayThreeOfWeek(dt).getUTCDay());
+// console.log(dayFourOfWeek(dt).getUTCDay());
+// console.log(dayFiveOfWeek(dt).getUTCDay());
+// console.log(daySixOfWeek(dt).getUTCDay());
+// console.log(daySevenOfWeek(dt).getUTCDay());
+// console.log(presentDayWeek = dayOneOfWeek(dt).getDay());
