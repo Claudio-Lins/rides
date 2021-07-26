@@ -296,7 +296,7 @@ let boxDaySix = document.querySelector("#daySix");
 let boxDaySeven = document.querySelector("#daySeven");
 
 myDate = new Date();
-diaSemana = myDate.getDay();
+diaSemana = myDate.getDay() - 1;
 
 let presentDayWeek = dayOneOfWeek(dt).getUTCDay() + diaSemana;
 switch (presentDayWeek) {
