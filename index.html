@@ -493,25 +493,32 @@
           <h2 class="font-bold text-lg">Nova Transação</h2>
           <form action="" onsubmit="Form.submit(event)">
             <div>
-              <select
-                id="description"
-                name="description"
-                class="
-                  w-full
-                  h-12
-                  bg-green-400
-                  text-xl
-                  font-semibold
-                  rounded-sm
-                "
-              >
+              <select id="description" name="description" class="w-full h-12 bg-green-400 text-xl font-semibold rounded-sm">
                 <option value="">Descrição</option>
-                <option value="Uber" selected>Uber</option>
+                <option value="UberEats" selected>UberEats</option>
+                <option value="Uber" >Uber</option>
                 <option value="Bolt">Bolt</option>
                 <option value="FreeNow">FreeNow</option>
                 <option value="Cash">Cash</option>
                 <option value="Combustível">Combustível</option>
               </select>
+            </div>
+            <div class='flex justify-between py-2'>
+              <button value="UberEats" name="description" id="" class="description">
+                <img src="./assets/plataformas/UberEats.svg" alt="Uber Eats" width="30px"/>
+              </button>
+              <button value="Uber" name="description" id="" class="description">
+                <img src="./assets/plataformas/Uber.svg" alt="Uber" width="30px"/>
+              </button>
+              <button value="Bolt" name="description" id="" class="description">
+                <img src="./assets/plataformas/Bolt.svg" alt="Bolt" width="30px"/>
+              </button>
+              <button value="FreeNow" name="description" id="" class="description">
+                <img src="./assets/plataformas/FreeNow.svg" alt="FreeNow" width="30px"/>
+              </button>
+              <button value="Cash" name="description" id="" class="description">
+                <img src="./assets/plataformas/Cash.svg" alt="Cash" width="30px"/>
+              </button>
             </div>
             <div class="input-group">
               <label class="sr-only" for="amount">Valores</label>
