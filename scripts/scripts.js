@@ -67,6 +67,7 @@ const Transaction = {
   incomes() {
     let income = 0;
     const comissao = "0.80";
+    const comissaoEats = "0.90";
 
     //pegar todas as Transações
     //para cada transação,
@@ -78,6 +79,9 @@ const Transaction = {
           break;
         case "FreeNow":
           income += transaction.amount * comissao;
+          break;
+        case "UberEats":
+          income += transaction.amount * comissaoEats;
           break;
         case "Uber":
           income += transaction.amount;
@@ -134,6 +138,7 @@ const DOM = {
 
   innerHTMLTransaction(transaction, index) {
     const comissao = "0.80";
+    const comissaoEats = "0.90";
     // const CSSclass = transaction.amount > 0 ? "income" : "expense";
     const CSSclass =
       transaction.description == "Combustível" ? "expense" : "income";
@@ -143,6 +148,8 @@ const DOM = {
       transaction.description == "FreeNow"
     ) {
       amount = Utils.formatCurrency(transaction.amount * comissao);
+    } else if (transaction.description == "UberEats") {
+      amount = Utils.formatCurrency(transaction.amount * comissaoEats);
     } else {
       amount = Utils.formatCurrency(transaction.amount);
     }
@@ -154,17 +161,7 @@ const DOM = {
       <div style="width:25%;">${transaction.date}</div>
       <div style="width:15%; display: flex; justify-content: flex-end;"><img onClick="Transaction.remove(${index})" src="./assets/minus.svg" width=20px alt="Imagem remover transação" /></div>
       </div>
-  
       `;
-    //class="bg-white flex items-center px-8 py-5 rounded-md text-left text-gray-500  tracking-wide mb-2">
-    // const html = `
-    //           <td class="descriptio">${transaction.description}</td>
-    //           <td class="${CSSclass}">${amount}</td>
-    //           <td class="date">${transaction.date}</td>
-    //           <td>
-    //             <img onClick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Imagem remover transaçnao" />
-    //           </td>
-    //     `;
     return html;
   },
 
@@ -214,6 +211,7 @@ const Utils = {
 };
 
 const Form = {
+  // description: document.querySelector("select#description"),
   description: document.querySelector("select#description"),
   amount: document.querySelector("input#amount"),
   date: document.querySelector("input#date"),
@@ -260,8 +258,6 @@ const Form = {
     Form.amount.value = "";
     Form.date.value = "";
   },
-
-   
 
   submit(event) {
     event.preventDefault();
@@ -314,10 +310,8 @@ App.init();
 // console.log(presentDayIncome);
 // }
 
-console.log(Math.round(Transaction.incomes()) / 100)
-console.log(Transaction.incomes())
-
-
+console.log(Math.round(Transaction.incomes()) / 100);
+console.log(Transaction.incomes());
 
 setInterval(metas, 1000);
 function metas() {
@@ -325,34 +319,154 @@ function metas() {
   let boxMetaToday = document.querySelector("#metaToday");
 
   if (incomeMetas >= 0 && incomeMetas <= 10) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayUm");
   } else if (incomeMetas >= 11 && incomeMetas <= 20) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayDois");
   } else if (incomeMetas >= 21 && incomeMetas <= 30) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayTres");
   } else if (incomeMetas >= 31 && incomeMetas <= 40) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayQuatro");
   } else if (incomeMetas >= 41 && incomeMetas <= 50) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayCinco");
   } else if (incomeMetas >= 51 && incomeMetas <= 60) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodaySeis");
   } else if (incomeMetas >= 61 && incomeMetas <= 70) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodaySete");
   } else if (incomeMetas >= 71 && incomeMetas <= 80) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayOito");
   } else if (incomeMetas >= 81 && incomeMetas <= 90) {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayNove");
   } else {
-    boxMetaToday.classList.remove("w-[100px]","metaTodayUm", "metaTodayDois", "metaTodayTres", "metaTodayQuatro", "metaTodayCinco", "metaTodaySeis", "metaTodaySete", "metaTodayOito", "metaTodayNove", "metaTodayDez");
+    boxMetaToday.classList.remove(
+      "w-[100px]",
+      "metaTodayUm",
+      "metaTodayDois",
+      "metaTodayTres",
+      "metaTodayQuatro",
+      "metaTodayCinco",
+      "metaTodaySeis",
+      "metaTodaySete",
+      "metaTodayOito",
+      "metaTodayNove",
+      "metaTodayDez"
+    );
     boxMetaToday.classList.add("metaTodayDez");
   }
 }
