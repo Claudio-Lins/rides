@@ -29,28 +29,6 @@ const Storage = {
 
 const Transaction = {
   all: Storage.get(),
-  // [
-  //   {
-  //     description: "Luz",
-  //     amount: -50001,
-  //     date: "23/01/2021",
-  //   },
-  //   {
-  //     description: "Criação Website",
-  //     amount: 500000,
-  //     date: "23/01/2021",
-  //   },
-  //   {
-  //     description: "Internet",
-  //     amount: -20012,
-  //     date: "23/01/2021",
-  //   },
-  //   {
-  //     description: "App",
-  //     amount: 200000,
-  //     date: "23/01/2021",
-  //   },
-  // ],
 
   add(transaction) {
     Transaction.all.push(transaction);
@@ -93,16 +71,6 @@ const Transaction = {
         default:
           break;
       }
-      // if (
-      //   transaction.amount > 0 &&
-      //   transaction.description != "Combustível" &&
-      //   transaction.description != "Bolt" &&
-      //   transaction.description != "FreeNow"
-      // ) {
-      //   income += transaction.amount;
-      // } else {
-      //   income += transaction.amount * comissao;
-      // }
     });
     return income;
   },
@@ -298,175 +266,16 @@ const App = {
 
 App.init();
 
-// myDate = new Date();
-// presentDay = myDate.getDate();
+myDate = new Date();
+presentDay = myDate.getDate();
 
-// setInterval(metas, 1000)
-// function metas() {
-// let presentDayIncome = Math.round(Transaction.incomes()) / 100;
-// if (presentDayIncome == 1) {
-//   document.querySelector("#incomeDisplay").classList.add('bg-black');
-// }
-// console.log(presentDayIncome);
-// }
-
-console.log(Math.round(Transaction.incomes()) / 100);
-console.log(Transaction.incomes());
-
-setInterval(metas, 1000);
+setInterval(metas, 1000)
 function metas() {
-  let incomeMetas = Transaction.incomes() / 100;
-  let boxMetaToday = document.querySelector("#metaToday");
-
-  if (incomeMetas >= 0 && incomeMetas <= 10) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayUm");
-  } else if (incomeMetas >= 11 && incomeMetas <= 20) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayDois");
-  } else if (incomeMetas >= 21 && incomeMetas <= 30) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayTres");
-  } else if (incomeMetas >= 31 && incomeMetas <= 40) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayQuatro");
-  } else if (incomeMetas >= 41 && incomeMetas <= 50) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayCinco");
-  } else if (incomeMetas >= 51 && incomeMetas <= 60) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodaySeis");
-  } else if (incomeMetas >= 61 && incomeMetas <= 70) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodaySete");
-  } else if (incomeMetas >= 71 && incomeMetas <= 80) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayOito");
-  } else if (incomeMetas >= 81 && incomeMetas <= 90) {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayNove");
-  } else {
-    boxMetaToday.classList.remove(
-      "w-[100px]",
-      "metaTodayUm",
-      "metaTodayDois",
-      "metaTodayTres",
-      "metaTodayQuatro",
-      "metaTodayCinco",
-      "metaTodaySeis",
-      "metaTodaySete",
-      "metaTodayOito",
-      "metaTodayNove",
-      "metaTodayDez"
-    );
-    boxMetaToday.classList.add("metaTodayDez");
-  }
+let presentDayIncome = Math.round(Transaction.incomes()) / 100;
+if (presentDayIncome == 1) {
+  document.querySelector("#incomeDisplay").classList.add('bg-black');
 }
+}
+
+console.log("presentDay: " + presentDay);
+console.log("Transaction.incomes: " + Math.round(Transaction.incomes()) / 100);
