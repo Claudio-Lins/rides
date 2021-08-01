@@ -1,20 +1,19 @@
 {
-  "name": "rides",
+  "name": "rides-html",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Claudio-Lins/rides.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Claudio Lins",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Claudio-Lins/rides/issues"
   },
-  "homepage": "https://github.com/Claudio-Lins/rides#readme"
+  "homepage": "https://github.com/Claudio-Lins/rides#readme",
+  "dependencies": {}
 }

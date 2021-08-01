@@ -1,10 +1,9 @@
 let fullDate = new Date();
 let ano = fullDate.getFullYear();
 let mes = fullDate.getMonth();
-let dia = fullDate.getDate();
-// let diadaSemana = fullDate.getDay();
-let hora = fullDate.getHours();
-// let minutos = fullDate.getSeconds();
+let dia = fullDate.getDate() <= 9 ? "0" + fullDate.getDate() : fullDate.getDate();
+let diadaSemana = fullDate.getDay();
+let hora = fullDate.getHours() <= 9 ? "0" + fullDate.getHours() : fullDate.getHours();
 
 var min = setInterval(minutos, 1000);
 function minutos() {
@@ -31,18 +30,18 @@ function segundos() {
 // diaSemana.innerHTML = diadaSemana;
 // let diaTxt = document.querySelector("#diaNum");
 // diaTxt.innerHTML = dia;
-let mesTxt = document.querySelector("#mes");
-mesTxt.innerHTML = mes;
 let anoTxt = document.querySelector("#ano");
 anoTxt.innerHTML = ano;
+let mesTxt = document.querySelector("#mesTxt");
+mesTxt.innerHTML = mes;
 let horaNow = document.querySelector("#hora");
 horaNow.innerHTML = hora;
-// let minutoNow = document.querySelector("#minuto");
-// minutoNow.innerHTML = minutos;
 
-if (dia <= 9) {
-  diaTxt.innerHTML = "0" + dia;
-}
+
+
+// if (dia <= 9) {
+//   diaTxt.innerHTML = "0" + dia;
+// }
 
 switch (mes) {
   case 0:
@@ -72,7 +71,6 @@ switch (mes) {
   case 8:
     mesTxt.innerHTML = "SETEMBRO";
     break;
-
   case 9:
     mesTxt.innerHTML = "OUTUBRO";
     break;
@@ -89,30 +87,9 @@ switch (mes) {
     break;
 }
 
-// switch (diadaSemana) {
-//   case 0:
-//     diaSemana.innerHTML = "Dom";
-//     break;
-//   case 1:
-//     diaSemana.innerHTML = "Seg";
-//     break;
-//   case 2:
-//     diaSemana.innerHTML = "Ter";
-//     break;
-//   case 3:
-//     diaSemana.innerHTML = "Qua";
-//     break;
-//   case 4:
-//     diaSemana.innerHTML = "Qui";
-//     break;
-//   case 5:
-//     diaSemana.innerHTML = "Sex";
-//     break;
-//   case 6:
-//     diaSemana.innerHTML = "Sab";
-//     break;
 
-//   default:
-//     break;
-// }
-
+console.log("ano: " + ano)
+console.log("mes: " + mes)
+console.log("diadaSemana: " + diadaSemana)
+console.log("dia: " + dia)
+console.log("hora: " + hora)
